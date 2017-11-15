@@ -3,11 +3,52 @@
 NeXTBeer is a page designed to help inform Team Integration when the next beer will be served.
 
 ## Requirements
-* User management system
+* 
 * Mail functionality
 * Schedule the next beer giving
 * Automatically determine who should give the next beer
 * ?? 
+
+
+
+## FRS
+Baggrund
+Hos kunden opleves et stigende behov for at kunne danne sig et overblik over fremtidige øl serveringer. Den nuværende løsning tillader en digitalløs koordinering blandt brugerne, hvorfor der ofte opleves en total forvirring af hvem som er næste øl giver. Dette har resulteret i et utal af UTH’er i slutbrugerens arbejdssituation. 
+
+Der udvikles derfor en browserbaseret EDB løsning, som muliggør en digital koordinering af fremtidige øl-serveringer samt en løsning hvor slutbrugeren får det fornødne overblik over fremtidige øl-servering. I udviklingen vil der i høj grad være fri leg fra udvikleren/udviklernes side til at udvikle den bedst mulige løsning. Dvs. udviklerens egne implementerings- og udviklingsidéer vægtes højt. Fra kundes side lægges der op til en meget agile udviklingsproces. Kunden har oplyst at man i høj grad vil give folkene bag NextBEER lov til at komme på nye implementeringsmuligheder undervejs. 
+
+#Requirements
+
+###Need to have
+1.	Det skal være muligt fra en brugervenlig GUI at tilføje/registrerer en øl-servering (event) i fremtiden.
+2.	Det skal være muligt at tilføje følgende informationer i forbindelse med registrering af en fremtidig øl-servering
+      1.	Mandatory info:
+            1. Titel på øl
+            1. Navn på bryghus
+            1. Forventet serveringsform, dvs. flaske, dåse, fad/fustage etc. 
+            1. Dato og klokkeslæt for servering
+            1. Lokation for serveringen
+      2.	Optional info
+            1.	Beskrivelse af øl (fritekst)
+            1.	Givers personlige rating af øl
+            1.	Evt. mulighed for tags
+
+3. Det skal være muligt at se tidspunkt, info samt et nedtællingsur for næstkommende øl-servering.
+4. Det skal være muligt at se fremtidige registreret øl-servering i en kalender-lignende widget et sted på GUI’en
+5. GUI’en skal være optimeret til storskærmsvisning 24/7
+6. User management system
+
+###Nice to have
+6.	Det skal være muligt at oprette sig som bruger i NextBEER
+7.	En bruger skal have mulighed for at oprette events
+8.	Den enkelte bruger skal have mulighed for at give kommentarer på en registreret fremtidig øl-servering event
+9.	En bruger skal have mulighed for at angive ratings på øl
+10.	Responsive UI design således NextBEER kan benyttes optimalt på mobil
+11.	Integration til ’Untapped’ 
+
+Leverance
+Der accepteres en løsning hvor need-to-have funktionalitet leveres i første iteration. Senere kan videreudvikling patches.
+
 
 
 
