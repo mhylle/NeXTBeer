@@ -1,23 +1,26 @@
-<div class="lefty beercreation">
-  <div class="sub-header"> or create a new one</div>
-  <div>
-    <div class="giving-beer-name">
-      <mat-form-field class="giving-beer-name">
-        <input type="text" matInput placeholder="Name" [(ngModel)]="newBeer.name"
-               required name="givingBeerName" class="giving-beer-name">
-      </mat-form-field>
-    </div>
-    <div class="giving-beer-type">
-      <mat-form-field class="giving-beer-type">
-        <input type="text" matInput placeholder="Type" [(ngModel)]="newBeer.type"
-               required name="givingBeerType" class="giving-beer-type">
-      </mat-form-field>
-    </div>
-    <div class="giving-beer-description">
-      <mat-form-field class="giving-beer-description">
-        <input type="text" matInput placeholder="Description" [(ngModel)]="newBeer.description"
-               required name="givingBeerDescription" class="giving-beer-description">
-      </mat-form-field>
+<div class="panel">
+  <div class="lefty beercreation">
+    <div class="sub-header">Create a new beer</div>
+    <div>
+      <div class="giving-beer-name">
+        <mat-form-field class="giving-beer-name">
+          <input type="text" matInput placeholder="Name" [(ngModel)]="newBeer.name"
+                 required name="givingBeerName" class="giving-beer-name">
+        </mat-form-field>
+      </div>
+      <div class="giving-beer-type">
+        <mat-form-field class="giving-beer-type">
+          <input type="text" matInput placeholder="Type" [(ngModel)]="newBeer.type"
+                 required name="givingBeerType" class="giving-beer-type">
+        </mat-form-field>
+      </div>
+      <div class="giving-beer-description">
+        <mat-form-field class="giving-beer-description">
+          <input type="text" matInput placeholder="Description" [(ngModel)]="newBeer.description"
+                 required name="givingBeerDescription" class="giving-beer-description">
+        </mat-form-field>
+      </div>
     </div>
   </div>
+  <button mat-button (click)="createBeer()">Create beer</button>
 </div>
