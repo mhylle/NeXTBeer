@@ -23,6 +23,11 @@
   display: inline-block;
 }
 
+.givingBeer {
+  position: relative;
+  display: inline-block;
+}
+
 .giving-date {
   float: left;
   margin-right: 8px;
@@ -37,4 +42,8 @@
 .giving-minute {
   float: left;
   width: 75px;
+}
+.giving-beer {
+  float: left;
+  width: 150px;
 }

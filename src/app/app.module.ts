@@ -12,9 +12,10 @@ import {
   MatDatepickerModule,
   MatInputModule,
   MatNativeDateModule,
-  MatRadioModule
+  MatRadioModule, MatSelectModule
 } from "@angular/material";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BeerService} from "./beers/services/beer.service";
 
 
 @NgModule({
@@ -34,9 +35,10 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     MatCardModule,
     MatRadioModule,
     MatInputModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    MatSelectModule
   ],
-  providers: [],
+  providers: [BeerService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -11,7 +11,6 @@
       </mat-input-container>
     </div>
 
-
     <div class="giving-hour">
       <mat-form-field class="giving-hour">
         <input type="number" matInput placeholder="Hour" [(ngModel)]="newGiving.time.hour" min="0" max="23" size="4"
@@ -20,7 +19,8 @@
     </div>
     <div class="giving-minute">
       <mat-form-field class="giving-minute">
-        <input type="number" class="smallInput" matInput placeholder="Minute" [(ngModel)]="newGiving.time.minute" min="0" max="59" size="4"
+        <input type="number" class="smallInput" matInput placeholder="Minute" [(ngModel)]="newGiving.time.minute"
+               min="0" max="59" size="4"
                required [formControl]="minuteControl" name="givingMinute" class="giving-minute">
       </mat-form-field>
     </div>
@@ -34,12 +34,29 @@
       </mat-form-field>
     </div>
   </div>
-
 </div>
 
-<div  class="panel">
+<div class="panel">
   <div class="header">Beer</div>
-  <div><img src="assets/images/Beer-Pale-MugLOW.jpg" height="100" width="100"/></div>
+  <div class="sub-header">Select a beer Or create a new one</div>
+  <div class="givingBeer">
+    <div class="giving-beer">
+      <mat-form-field>
+        <mat-select [(ngModel)]="selectedBeer">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let beer of beers" [value]="beer">{{beer.title}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <!--<div class="giving-beer">-->
+    <!--<mat-form-field>-->
+    <!--<input type="text" matInput placeholder="The Office" [(ngModel)]="newGiving.location" required-->
+    <!--name="givingLocation">-->
+    <!--</mat-form-field>-->
+    <!--</div>-->
+
+    <div>Selected Beer: {{selectedBeer?.title}}</div>
+  </div>
 </div>
 
 <div>
