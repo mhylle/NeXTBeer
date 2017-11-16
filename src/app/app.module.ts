@@ -16,12 +16,14 @@ import {
 } from "@angular/material";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BeerService} from "./beers/services/beer.service";
+import { CreateBeerComponent } from './beers/create-beer/create-beer.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateGivingComponent
+    CreateGivingComponent,
+    CreateBeerComponent
   ],
   imports: [
     FormsModule,

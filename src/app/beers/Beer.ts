@@ -1,6 +1,6 @@
 export class Beer {
   id: number;
-  title: string;
+  name: string;
   brewery: string;
   description: string;
   type: string;

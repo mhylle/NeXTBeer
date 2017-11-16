@@ -1,65 +1,62 @@
+<section>
+  <div class="panel">
+    <div class="header">Location and time</div>
+    <div class="givingTime">
+      <div class="sub-header">When</div>
+      <div class="giving-date">
+        <mat-input-container>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="givingTime" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-input-container>
+      </div>
+
+      <div class="giving-hour">
+        <mat-form-field class="giving-hour">
+          <input type="number" matInput placeholder="Hour" [(ngModel)]="newGiving.time.hour" min="0" max="23" size="4"
+                 required [formControl]="hourControl" name="givingHour" class="giving-hour">
+        </mat-form-field>
+      </div>
+      <div class="giving-minute">
+        <mat-form-field class="giving-minute">
+          <input type="number" class="smallInput" matInput placeholder="Minute" [(ngModel)]="newGiving.time.minute"
+                 min="0" max="59" size="4"
+                 required [formControl]="minuteControl" name="givingMinute" class="giving-minute">
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <div class="sub-header">Where</div>
+      <div class="giving-location">
+        <mat-form-field>
+          <input type="text" matInput placeholder="The Office" [(ngModel)]="newGiving.location" required
+                 name="givingLocation">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="panel">
+    <div class="header">Beer</div>
+    <div class="lefty beerselection">
+      <div class="sub-header">Select a beer</div>
+      <div class="givingBeer">
+        <div class="giving-beer">
+          <mat-form-field>
+            <mat-select [(ngModel)]="selectedBeer">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let beer of beers" [value]="beer">{{beer.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<div>Selected Beer: {{selectedBeer?.name}}</div>
 <div class="panel">
-  <div class="header">Location and time</div>
-
-  <div class="givingTime">
-    <div class="sub-header">When</div>
-    <div class="giving-date">
-      <mat-input-container>
-        <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="givingTime" required>
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-input-container>
-    </div>
-
-    <div class="giving-hour">
-      <mat-form-field class="giving-hour">
-        <input type="number" matInput placeholder="Hour" [(ngModel)]="newGiving.time.hour" min="0" max="23" size="4"
-               required [formControl]="hourControl" name="givingHour" class="giving-hour">
-      </mat-form-field>
-    </div>
-    <div class="giving-minute">
-      <mat-form-field class="giving-minute">
-        <input type="number" class="smallInput" matInput placeholder="Minute" [(ngModel)]="newGiving.time.minute"
-               min="0" max="59" size="4"
-               required [formControl]="minuteControl" name="givingMinute" class="giving-minute">
-      </mat-form-field>
-    </div>
-  </div>
-  <div>
-    <div class="sub-header">Where</div>
-    <div class="giving-location">
-      <mat-form-field>
-        <input type="text" matInput placeholder="The Office" [(ngModel)]="newGiving.location" required
-               name="givingLocation">
-      </mat-form-field>
-    </div>
-  </div>
-</div>
-
-<div class="panel">
-  <div class="header">Beer</div>
-  <div class="sub-header">Select a beer Or create a new one</div>
-  <div class="givingBeer">
-    <div class="giving-beer">
-      <mat-form-field>
-        <mat-select [(ngModel)]="selectedBeer">
-          <mat-option>None</mat-option>
-          <mat-option *ngFor="let beer of beers" [value]="beer">{{beer.title}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <!--<div class="giving-beer">-->
-    <!--<mat-form-field>-->
-    <!--<input type="text" matInput placeholder="The Office" [(ngModel)]="newGiving.location" required-->
-    <!--name="givingLocation">-->
-    <!--</mat-form-field>-->
-    <!--</div>-->
-
-    <div>Selected Beer: {{selectedBeer?.title}}</div>
-  </div>
-</div>
-
-<div>
   <button mat-button (click)="createGiving()">Create</button>
 </div>
 

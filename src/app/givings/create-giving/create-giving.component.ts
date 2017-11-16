@@ -11,6 +11,7 @@ import {BeerService} from "../../beers/services/beer.service";
 })
 export class CreateGivingComponent implements OnInit {
   newGiving: Giving = new Giving();
+  newBeer: Beer = new Beer();
   selectedBeer: Beer;
   hourControl = new FormControl("", [Validators.min(0), Validators.max(23)]);
   minuteControl = new FormControl("", [Validators.min(0), Validators.max(59)]);
