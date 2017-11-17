@@ -38,8 +38,8 @@ Der udvikles derfor en browserbaseret EDB løsning, som muliggør en digital koo
 5. GUI’en skal være optimeret til storskærmsvisning 24/7
 6. User management system
 
-###Nice to have
-6.	Det skal være muligt at oprette sig som bruger i NextBEER
+### Nice to have
+6. Det skal være muligt at oprette sig som bruger i NextBEER
 7.	En bruger skal have mulighed for at oprette events
 8.	Den enkelte bruger skal have mulighed for at give kommentarer på en registreret fremtidig øl-servering event
 9.	En bruger skal have mulighed for at angive ratings på øl
