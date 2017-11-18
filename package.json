@@ -8,8 +8,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
-  },
+    "e2e": "ng e2e",
+    "build.prod": "ng build --aot --prod --progress false --base-href \"https://mhylle.github.io/NeXTBeer/\""
+
+},
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.1",
