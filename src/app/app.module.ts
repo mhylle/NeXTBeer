@@ -17,8 +17,9 @@ import {
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BeerService} from "./beers/services/beer.service";
 import { CreateBeerComponent } from './beers/create-beer/create-beer.component';
-import { ViewComponent } from './givings/view/view.component';
+import { ViewGivingComponent } from './givings/view/view-givings.component';
 import { SelectBeerComponent } from './beers/select-beer/select-beer.component';
+import {GivingService} from "./givings/services/giving.service";
 
 
 @NgModule({
@@ -26,7 +27,7 @@ import { SelectBeerComponent } from './beers/select-beer/select-beer.component';
     AppComponent,
     CreateGivingComponent,
     CreateBeerComponent,
-    ViewComponent,
+    ViewGivingComponent,
     SelectBeerComponent
   ],
   imports: [
@@ -44,7 +45,7 @@ import { SelectBeerComponent } from './beers/select-beer/select-beer.component';
     MatButtonToggleModule,
     MatSelectModule
   ],
-  providers: [BeerService],
+  providers: [BeerService, GivingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

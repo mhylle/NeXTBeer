@@ -39,22 +39,10 @@
 <section>
   <div class="panel">
     <div class="header">Beer</div>
-    <div class="lefty beerselection">
-      <div class="sub-header">Select a beer</div>
-      <div class="givingBeer">
-        <div class="giving-beer">
-          <mat-form-field>
-            <mat-select [(ngModel)]="selectedBeer">
-              <mat-option>None</mat-option>
-              <mat-option *ngFor="let beer of beers" [value]="beer">{{beer.name}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-      </div>
-    </div>
+    <select-beer (select)="beerSelected($event)"></select-beer>
   </div>
 </section>
-<div>Selected Beer: {{selectedBeer?.name}}</div>
+
 <div class="panel">
   <button mat-button (click)="createGiving()">Create</button>
 </div>

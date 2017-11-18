@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Beer} from "../Beer";
+import {BeerService} from "../services/beer.service";
 
 @Component({
-  selector: 'app-select-beer',
+  selector: 'select-beer',
   templateUrl: './select-beer.component.html',
   styleUrls: ['./select-beer.component.css']
 })
 export class SelectBeerComponent implements OnInit {
+  beers: Beer[];
+  selectedBeer: Beer;
 
-  constructor() { }
+  @Output()
+  select: EventEmitter<Beer> = new EventEmitter();
+
+  constructor(private beerService: BeerService) {
+    this.selectedBeer = null;
+  }
 
   ngOnInit() {
+    this.beers = this.beerService.getBeers();
+  }
+
+  onSelectBeer() {
+    this.select.emit(this.selectedBeer);
   }
 
 }

@@ -1,20 +1,20 @@
 // import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 //
-// import { ViewComponent } from './view.component';
+// import { ViewGivingComponent } from './view.component';
 //
-// describe('ViewComponent', () => {
-//   let component: ViewComponent;
-//   let fixture: ComponentFixture<ViewComponent>;
+// describe('ViewGivingComponent', () => {
+//   let component: ViewGivingComponent;
+//   let fixture: ComponentFixture<ViewGivingComponent>;
 //
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [ ViewComponent ]
+//       declarations: [ ViewGivingComponent ]
 //     })
 //     .compileComponents();
 //   }));
 //
 //   beforeEach(() => {
-//     fixture = TestBed.createComponent(ViewComponent);
+//     fixture = TestBed.createComponent(ViewGivingComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });
