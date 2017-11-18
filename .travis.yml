@@ -24,7 +24,7 @@ before_script:
 
 
 script:
-#- ng test
+- ng test
 - npm run build.prod
 
 
