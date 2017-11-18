@@ -1,13 +1,23 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
+import {async, TestBed} from '@angular/core/testing';
+import {AppComponent} from './app.component';
 import {CreateGivingComponent} from "./givings/create-giving/create-giving.component";
 import {CreateBeerComponent} from "./beers/create-beer/create-beer.component";
 import {
-  MatButtonModule, MatButtonToggleModule, MatCardModule, MatCheckboxModule, MatDatepickerModule, MatInputModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatInputModule,
   MatNativeDateModule,
   MatRadioModule,
   MatSelectModule
 } from "@angular/material";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {BrowserModule} from "@angular/platform-browser";
+import {BeerService} from "./beers/services/beer.service";
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -20,11 +30,18 @@ describe('AppComponent', () => {
         MatRadioModule,
         MatInputModule,
         MatButtonToggleModule,
-        MatSelectModule
+        MatSelectModule,
+        FormsModule,
+        ReactiveFormsModule,
+        BrowserModule,
+        BrowserAnimationsModule
       ],
       declarations: [
         AppComponent, CreateGivingComponent, CreateBeerComponent
       ],
+      providers: [
+        BeerService
+      ]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
@@ -32,7 +49,7 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
-  it(`should have as title 'app'`, async(() => {
+  it(`should have as title 'NeXT Beer'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('NeXT Beer');
