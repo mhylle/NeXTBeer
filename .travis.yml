@@ -23,7 +23,7 @@ before_script:
 - npm install
 
 script:
-- ng test
+#- ng test
 - ng build --prod
 
 notifications:

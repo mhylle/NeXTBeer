@@ -1,4 +1,17 @@
 # NeXTBeer
+<!-- Badges section here. -->
+[![Build Status](https://travis-ci.org/mhylle/NeXTBeer.svg?branch=master)](https://travis-ci.org/mhylle/NeXTBeer)
+
+[![Dependency Status](https://david-dm.org/mhylle/NeXTBeer.svg)](https://david-dm.org/mhylle/NeXTBeer.svg)
+
+
+[![npm](https://img.shields.io/npm/v/npm.svg)]()
+
+<!--[![npm](https://img.shields.io/npm/v/%40angular/cli/next.svg)][npm-badge-url]-->
+<!--[![npm](https://img.shields.io/npm/l/@angular/cli.svg)][npm-badge-url]-->
+<!--[![npm](https://img.shields.io/npm/dm/@angular/cli.svg)][npm-badge-url]-->
+
+
 
 NeXTBeer is a page designed to help inform Team Integration when the next beer will be served.
 
