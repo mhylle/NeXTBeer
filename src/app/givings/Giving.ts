@@ -2,6 +2,8 @@ import {Beer} from "../beers/Beer";
 import {User} from "../users/User";
 
 export class Giving {
+  id: string;
+  name: string;
   beer: Beer;
   giver: User;
   attendees: User[];
