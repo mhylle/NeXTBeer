@@ -8,7 +8,7 @@ import {Giving} from "../Giving";
   styleUrls: ['./view-givings.component.css']
 })
 export class ViewGivingComponent implements OnInit {
-  private givings: Giving[];
+  givings: Giving[];
 
   constructor(private givingService: GivingService) { }
 
