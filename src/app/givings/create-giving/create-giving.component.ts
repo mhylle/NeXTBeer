@@ -2,7 +2,6 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Giving} from "../Giving";
 import {FormControl, Validators} from "@angular/forms";
 import {Beer} from "../../beers/Beer";
-import {BeerService} from "../../beers/services/beer.service";
 import {GivingService} from "../services/giving.service";
 
 @Component({
@@ -13,10 +12,9 @@ import {GivingService} from "../services/giving.service";
 export class CreateGivingComponent implements OnInit {
   newGiving: Giving = new Giving();
   newBeer: Beer = new Beer();
-  selectedBeer: Beer;
   hourControl = new FormControl("", [Validators.min(0), Validators.max(23)]);
   minuteControl = new FormControl("", [Validators.min(0), Validators.max(59)]);
-  givingTime: any;
+  givingTime: Date;
 
 
   @Output()
@@ -28,7 +26,7 @@ export class CreateGivingComponent implements OnInit {
       day: 0,
       month: 0,
       year: 0,
-      hour : 14,
+      hour: 14,
       minute: 0
     };
   }
@@ -37,24 +35,27 @@ export class CreateGivingComponent implements OnInit {
 
   }
 
-  addGiving() {
-    this.add.emit(this.newGiving);
-  }
-
   beerSelected(beer: Beer) {
-    this.selectedBeer = beer;
+    this.newGiving.beer = beer;
   }
 
   createGiving() {
     console.log(this.newGiving.time.hour);
     console.log(this.givingTime);
+    console.log(this.newGiving.beer.name);
+    console.log('Adding giving: '
+      + 'Name: ' + this.newGiving.name
+      + '\nDate: ' + this.newGiving.time.day + '/' + this.newGiving.time.month + '-' + this.newGiving.time.year);
+    this.newGiving.time.day = this.givingTime.getDate();
+    this.newGiving.time.month = this.givingTime.getMonth() + 1;
+    this.newGiving.time.year = this.givingTime.getFullYear();
     this.givingService.addGiving(this.newGiving);
     this.newGiving = new Giving();
     this.newGiving.time = {
       day: 0,
       month: 0,
       year: 0,
-      hour : 14,
+      hour: 14,
       minute: 0
     };
   }

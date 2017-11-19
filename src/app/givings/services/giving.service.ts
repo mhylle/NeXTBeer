@@ -13,6 +13,10 @@ export class GivingService {
   }
 
   addGiving(giving: Giving) {
+    console.log('Adding giving: '
+      + 'Name: ' + giving.name
+      + '\nDate: ' + giving.time.day + '/' + giving.time.month + '-' + giving.time.year);
+
     this.givings.push(giving);
   }
 
