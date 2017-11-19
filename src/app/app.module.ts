@@ -20,6 +20,9 @@ import { CreateBeerComponent } from './beers/create-beer/create-beer.component';
 import { ViewGivingComponent } from './givings/view/view-givings.component';
 import { SelectBeerComponent } from './beers/select-beer/select-beer.component';
 import {GivingService} from "./givings/services/giving.service";
+import { CreateUserComponent } from './users/create/create-user.component';
+import { ViewUserComponent } from './users/view/view-user.component';
+import { ListUsersComponent } from './users/list/list-users.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import {GivingService} from "./givings/services/giving.service";
     CreateGivingComponent,
     CreateBeerComponent,
     ViewGivingComponent,
-    SelectBeerComponent
+    SelectBeerComponent,
+    CreateUserComponent,
+    ViewUserComponent,
+    ListUsersComponent
   ],
   imports: [
     FormsModule,

@@ -1,9 +1,11 @@
-<div>Givings: </div>
-<div>
-  <div *ngFor="let giving of givings">
-    <div>Giver{{giving.name}}</div>
-    <div>Beer{{giving.beer?.name}}</div>
-    <div>Date: {{giving.time.day}}/{{giving.time.month}}-{{giving.time.year}}</div>
-    <div>Time: {{giving.time.hour}}:{{giving.time.minute}}</div>
+<div class="panel">
+  <div>Givings:</div>
+  <div>
+    <div *ngFor="let giving of givings">
+      <div>Giver{{giving.name}}</div>
+      <div>Beer{{giving.beer?.name}}</div>
+      <div>Date: {{giving.time.day}}/{{giving.time.month}}-{{giving.time.year}}</div>
+      <div>Time: {{giving.time.hour}}:{{giving.time.minute}}</div>
+    </div>
   </div>
 </div>

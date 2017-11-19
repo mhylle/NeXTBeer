@@ -1,0 +1,24 @@
+<div class="panel">
+  <div>
+    <mat-form-field class="user_firstname">
+      <input type="string" matInput placeholder="Firstname" [(ngModel)]="newUser.firstname" size="4"
+             required name="user.firstname" class="user_firstname">
+    </mat-form-field>
+    <mat-form-field class="user_familyname">
+      <input type="string" matInput placeholder="Familyname" [(ngModel)]="newUser.familyname" size="4"
+             required name="user.familyname" class="user_familyname">
+    </mat-form-field>
+  </div>
+  <mat-form-field class="user_shortname">
+    <input type="string" matInput placeholder="Shortname" [(ngModel)]="newUser.shortname" size="4"
+           required name="user.shortname" class="user_shortname">
+  </mat-form-field>
+  <mat-form-field class="user.untappdid">
+    <input type="string" matInput placeholder="Untappd Id" [(ngModel)]="newUser.untappdId" size="4"
+           required name="user.untappdid" class="user_untappdid">
+  </mat-form-field>
+
+  <div>
+    <button mat-button>Create</button>
+  </div>
+</div>
