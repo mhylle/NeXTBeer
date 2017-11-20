@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Beer} from "../Beer";
 import {BeerService} from "../services/beer.service";
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: 'select-beer',
@@ -8,7 +9,8 @@ import {BeerService} from "../services/beer.service";
   styleUrls: ['./select-beer.component.css']
 })
 export class SelectBeerComponent implements OnInit {
-  beers: Beer[];
+
+  beers: Observable<Beer[]>;
   selectedBeer: Beer;
 
   @Output()

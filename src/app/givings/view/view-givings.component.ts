@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {GivingService} from "../services/giving.service";
 import {Giving} from "../Giving";
 
@@ -10,10 +10,12 @@ import {Giving} from "../Giving";
 export class ViewGivingComponent implements OnInit {
   givings: Giving[];
 
-  constructor(private givingService: GivingService) { }
-
-  ngOnInit() {
-    this.givings = this.givingService.getGivings()
+  constructor(private givingService: GivingService) {
   }
 
+  ngOnInit() {
+    this.givingService.getGivings().subscribe(response => {
+      this.givings = response;
+    })
+  }
 }

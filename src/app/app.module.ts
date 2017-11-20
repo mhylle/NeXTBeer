@@ -23,6 +23,12 @@ import {GivingService} from "./givings/services/giving.service";
 import { CreateUserComponent } from './users/create/create-user.component';
 import { ViewUserComponent } from './users/view/view-user.component';
 import { ListUsersComponent } from './users/list/list-users.component';
+import {HttpClientModule} from "@angular/common/http";
+import {AngularFireModule} from "angularfire2";
+import {AngularFireDatabaseModule} from "angularfire2/database";
+import {AngularFireAuthModule} from "angularfire2/auth";
+import {environment} from "../environments/environment";
+
 
 
 @NgModule({
@@ -49,7 +55,11 @@ import { ListUsersComponent } from './users/list/list-users.component';
     MatRadioModule,
     MatInputModule,
     MatButtonToggleModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   providers: [BeerService, GivingService],
   bootstrap: [AppComponent]

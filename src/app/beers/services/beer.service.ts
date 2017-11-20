@@ -1,12 +1,15 @@
 import {Injectable} from '@angular/core';
 import {Beer} from "../Beer";
+import {AngularFireDatabase} from "angularfire2/database";
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class BeerService {
+  beerObservable: Observable<any[]>;
 
   beers: Beer[] = [];
 
-  constructor() {
+  constructor(private db: AngularFireDatabase) {
     let b1 = new Beer();
     b1.id = 1;
     b1.name = 'Londons Pride';
@@ -22,23 +25,28 @@ export class BeerService {
     b2.brewery = 'Warsteiner';
     this.beers.push(b2);
 
+    this.beerObservable = this.getBeers();
+
   }
 
-  getBeers(): Beer[] {
-    return this.beers;
+  getBeers(): Observable<Beer[]> {
+    return this.db.list<Beer>('/beers').valueChanges();
   }
 
   addBeer(beer: Beer) {
-    this.beers.push(beer);
+    return this.db.list('/beers').push(beer);
+    // this.beers.push(beer);
   }
 
-  getBeerByName(name: string): Beer {
-    let beers = this.beers.filter(beer => beer.name === name);
-    if (beers.length > 0) {
-      return beers[0];
-    }
-    return null;
-  }
+  // getBeerByName(name: string): Beer {
+  //   let beers = this.db.list('beers');
+  //
+  //   (beer => beer.name === name);
+  //   if (beers.length > 0) {
+  //     return beers[0];
+  //   }
+  //   return null;
+  // }
 
   getBeerById(id: number): Beer {
     let beers = this.beers.filter(beer => beer.id == id);
