@@ -1,0 +1,17 @@
+.beer {
+  /*display: inline-block;*/
+
+}
+
+.beer-name {
+  /*margin-right: 8px;*/
+}
+
+.beer-type {
+  /*margin-right: 8px;*/
+}
+
+.beer-description {
+  /*float: left;*/
+  /*display: block;*/
+}

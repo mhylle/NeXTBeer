@@ -5,7 +5,7 @@ import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class BeerService {
-  beerObservable: Observable<any[]>;
+  beerObservable: Observable<Beer[]>;
 
   beers: Beer[] = [];
 
