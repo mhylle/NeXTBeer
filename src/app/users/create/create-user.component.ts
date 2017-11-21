@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {User} from "../User";
+import {UserService} from "../services/user.service";
 
 @Component({
   selector: 'create-user',
@@ -12,14 +13,17 @@ export class CreateUserComponent implements OnInit {
   @Output()
   userCreated: EventEmitter<User> = new EventEmitter();
 
-  constructor() {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit() {
   }
 
   createUser() {
-    this.userCreated.emit(this.newUser);
+    this.userService.addUser(this.newUser).then(res => {
+      this.userCreated.emit(this.newUser);
+    });
+
     this.newUser = new User();
   }
 

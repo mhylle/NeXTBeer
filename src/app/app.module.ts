@@ -33,6 +33,7 @@ import {AngularFireAuthModule} from "angularfire2/auth";
 import {environment} from "../environments/environment";
 import {RouterModule, Routes} from "@angular/router";
 import {ListBeersComponent} from "./beers/list/list-beers.component";
+import {UserService} from "./users/services/user.service";
 
 
 const appRoutes: Routes = [
@@ -79,7 +80,7 @@ const appRoutes: Routes = [
       {enableTracing: false} // <-- debugging purposes only
     )
   ],
-  providers: [BeerService, GivingService],
+  providers: [BeerService, GivingService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

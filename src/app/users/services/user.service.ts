@@ -11,7 +11,7 @@ export class UserService {
   }
 
   addUser(user: User) {
-    this.db.list('/users').push(user);
+    return this.db.list('/users').push(user);
   }
 
   // getUserById(id: string) {
