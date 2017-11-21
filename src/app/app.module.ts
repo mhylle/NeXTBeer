@@ -33,7 +33,6 @@ import {AngularFireAuthModule} from "angularfire2/auth";
 import {environment} from "../environments/environment";
 import {RouterModule, Routes} from "@angular/router";
 import {ListBeersComponent} from "./beers/list/list-beers.component";
-import {MhCardComponent} from "./directives/mh-card/mhcard.component";
 
 
 const appRoutes: Routes = [
