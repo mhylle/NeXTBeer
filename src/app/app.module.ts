@@ -20,7 +20,7 @@ import {
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BeerService} from "./beers/services/beer.service";
 import {CreateBeerComponent} from './beers/create-beer/create-beer.component';
-import {ViewGivingComponent} from './givings/view/view-givings.component';
+import {ListGivingComponent} from './givings/list/list-givings.component';
 import {SelectBeerComponent} from './beers/select-beer/select-beer.component';
 import {GivingService} from "./givings/services/giving.service";
 import {CreateUserComponent} from './users/create/create-user.component';
@@ -34,13 +34,18 @@ import {environment} from "../environments/environment";
 import {RouterModule, Routes} from "@angular/router";
 import {ListBeersComponent} from "./beers/list/list-beers.component";
 import {UserService} from "./users/services/user.service";
+import {PageNotFoundComponent} from "./errorhandling/page-not-found.component";
 
 
 const appRoutes: Routes = [
   {path: 'create-user', component: CreateUserComponent},
   {path: 'list-users', component: ListUsersComponent},
   {path: 'create-beer', component: CreateBeerComponent},
-  {path: 'list-beers', component: ListBeersComponent}
+  {path: 'list-beers', component: ListBeersComponent},
+  {path: 'create-giving', component: CreateGivingComponent},
+  {path: 'list-givings', component: ListGivingComponent},
+  {path: '**', component: PageNotFoundComponent},
+  {path: '', redirectTo: '/', pathMatch: 'full'}
 ]
 
 @NgModule({
@@ -48,12 +53,13 @@ const appRoutes: Routes = [
     AppComponent,
     CreateGivingComponent,
     CreateBeerComponent,
-    ViewGivingComponent,
+    ListGivingComponent,
     SelectBeerComponent,
     CreateUserComponent,
     ViewUserComponent,
     ListUsersComponent,
-    ListBeersComponent
+    ListBeersComponent,
+    PageNotFoundComponent
   ],
   imports: [
     FormsModule,

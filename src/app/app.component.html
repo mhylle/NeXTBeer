@@ -1,7 +1,7 @@
-<mat-menu #rootMenu="matMenu">
-  <button mat-menu-item [matMenuTriggerFor]="userMenu">Users</button>
-  <button mat-menu-item [matMenuTriggerFor]="beerMenu">Beers</button>
-</mat-menu>
+<!--<mat-menu #rootMenu="matMenu">-->
+<!--<button mat-menu-item [matMenuTriggerFor]="userMenu">Users</button>-->
+<!--<button mat-menu-item [matMenuTriggerFor]="beerMenu">Beers</button>-->
+<!--</mat-menu>-->
 
 <mat-menu #userMenu="matMenu">
   <button mat-menu-item routerLink="create-user">Create</button>
@@ -12,10 +12,17 @@
   <button mat-menu-item routerLink="create-beer">Create</button>
   <button mat-menu-item routerLink="list-beers">List</button>
 </mat-menu>
-<button mat-icon-button [matMenuTriggerFor]="rootMenu">
-  <mat-icon>more_vert</mat-icon>
-</button>
-
+<mat-menu #givingMenu="matMenu">
+  <button mat-menu-item routerLink="create-giving">Create</button>
+  <button mat-menu-item routerLink="list-givings">List</button>
+</mat-menu>
+<!--<button mat-icon-button [matMenuTriggerFor]="rootMenu">-->
+<!--<mat-icon>more_vert</mat-icon>-->
+<!--</button>-->
+<button mat-icon-button>Home</button>
+<button mat-icon-button [matMenuTriggerFor]="userMenu">Users</button>
+<button mat-icon-button [matMenuTriggerFor]="beerMenu">Beers</button>
+<button mat-icon-button [matMenuTriggerFor]="givingMenu">Givings</button>
 <div style="text-align:center">
   <h1>
     Welcome to {{title}}!
@@ -23,7 +30,7 @@
 </div>
 <router-outlet></router-outlet>
 
-<create-giving></create-giving>
-<view-givings></view-givings>
+<!--<create-giving></create-giving>-->
+<!--<view-givings></view-givings>-->
 
 

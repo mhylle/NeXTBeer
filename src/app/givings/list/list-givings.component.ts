@@ -3,11 +3,11 @@ import {GivingService} from "../services/giving.service";
 import {Giving} from "../Giving";
 
 @Component({
-  selector: 'view-givings',
-  templateUrl: './view-givings.component.html',
-  styleUrls: ['./view-givings.component.css']
+  selector: 'list-givings',
+  templateUrl: './list-givings.component.html',
+  styleUrls: ['./list-givings.component.css']
 })
-export class ViewGivingComponent implements OnInit {
+export class ListGivingComponent implements OnInit {
   givings: Giving[];
 
   constructor(private givingService: GivingService) {
