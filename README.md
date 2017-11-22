@@ -11,7 +11,8 @@
 <!--[![npm](https://img.shields.io/npm/l/@angular/cli.svg)][npm-badge-url]-->
 <!--[![npm](https://img.shields.io/npm/dm/@angular/cli.svg)][npm-badge-url]-->
 
-
+The running version of the application can be found
+https://mhylle.github.io/NeXTBeer/
 
 NeXTBeer is a page designed to help inform Team Integration when the next beer will be served.
 
