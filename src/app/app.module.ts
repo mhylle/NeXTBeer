@@ -47,8 +47,8 @@ const appRoutes: Routes = [
   {path: 'create-tasting', component: CreateTastingComponent},
   {path: 'list-tastings', component: ListTastingComponent},
   {path: 'next-tasting', component: ViewTastingComponent},
-  {path: '**', component: PageNotFoundComponent},
-  {path: '', redirectTo: '/next-tasting', pathMatch: 'full'}
+  {path: '', redirectTo: '/next-tasting', pathMatch: 'full'},
+  {path: '**', component: PageNotFoundComponent}
 ]
 
 @NgModule({

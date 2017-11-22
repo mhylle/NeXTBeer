@@ -1,15 +1,15 @@
 <div class="panel">
-  <div>Next tasting:</div>
+  <div *ngIf="tasting">Next tasting:</div>
       <div class="label">Giver</div>
-      <div>{{tasting.giver?.firstname}} {{tasting.giver?.familyname}}</div>
+      <div>{{tasting?.giver?.firstname}} {{tasting?.giver?.familyname}}</div>
       <div class="label">Beer</div>
-      <div>{{tasting.beer?.name}}</div>
+      <div>{{tasting?.beer?.name}}</div>
       <div class="label">Date</div>
-      <div>{{tasting.time.day}}/{{tasting.time.month}}-{{tasting.time.year}}</div>
+      <div>{{tasting?.time.day}}/{{tasting?.time.month}}-{{tasting?.time.year}}</div>
       <div class="label">Time</div>
-      <div>{{tasting.time.hour}}:{{tasting.time.minute}}</div>
+      <div>{{tasting?.time.hour}}:{{tasting?.time.minute}}</div>
       <div class="label">Sted</div>
-      <div>{{tasting.location}}</div>
+      <div>{{tasting?.location}}</div>
 
       <div>
         <div class="label">Untappd</div>
