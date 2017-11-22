@@ -14,7 +14,7 @@
       <div>{{giving.location}}</div>
 
       <div>
-        <div>Untappd</div>
+        <div class="label">Untappd</div>
         <div *ngFor="let user of users">
           <div *ngIf="user.untappdId">
             {{user.firstname}} {{user.familyname}} has rated {{giving.beer.name}} at {{getBeerRatingByUser(user,
