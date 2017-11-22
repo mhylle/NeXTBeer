@@ -12,9 +12,9 @@
   <button mat-menu-item routerLink="create-beer">Create</button>
   <button mat-menu-item routerLink="list-beers">List</button>
 </mat-menu>
-<mat-menu #givingMenu="matMenu">
-  <button mat-menu-item routerLink="create-giving">Create</button>
-  <button mat-menu-item routerLink="list-givings">List</button>
+<mat-menu #tastingMenu="matMenu">
+  <button mat-menu-item routerLink="create-tasting">Create</button>
+  <button mat-menu-item routerLink="list-tastings">List</button>
 </mat-menu>
 <!--<button mat-icon-button [matMenuTriggerFor]="rootMenu">-->
 <!--<mat-icon>more_vert</mat-icon>-->
@@ -22,7 +22,7 @@
 <button mat-icon-button>Home</button>
 <button mat-icon-button [matMenuTriggerFor]="userMenu">Users</button>
 <button mat-icon-button [matMenuTriggerFor]="beerMenu">Beers</button>
-<button mat-icon-button [matMenuTriggerFor]="givingMenu">Givings</button>
+<button mat-icon-button [matMenuTriggerFor]="tastingMenu">Tastings</button>
 <div style="text-align:center">
   <h1>
     Welcome to {{title}}!
@@ -30,7 +30,7 @@
 </div>
 <router-outlet></router-outlet>
 
-<!--<create-giving></create-giving>-->
-<!--<view-givings></view-givings>-->
+<!--<create-tasting></create-tasting>-->
+<!--<view-tastings></view-tastings>-->
 
 

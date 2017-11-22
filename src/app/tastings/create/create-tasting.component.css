@@ -18,32 +18,32 @@
 }
 
 
-.givingTime {
+.tastingTime {
   position: relative;
   display: inline-block;
 }
 
-.givingBeer {
+.tastingBeer {
   position: relative;
   display: inline-block;
 }
 
-.giving-date {
+.tasting-date {
   float: left;
   margin-right: 8px;
 }
 
-.giving-hour {
+.tasting-hour {
   float: left;
   width: 75px;
   margin-right:8px;
 }
 
-.giving-minute {
+.tasting-minute {
   float: left;
   width: 75px;
 }
-.giving-beer {
+.tasting-beer {
   float: left;
   width: 150px;
 }
@@ -52,7 +52,7 @@
   float: left;
 }
 
-.giving-beer-name {
+.tasting-beer-name {
   float: left;
   width: 100px;
 }

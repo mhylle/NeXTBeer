@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {CreateGivingComponent} from './givings/create-giving/create-giving.component';
+import {CreateTastingComponent} from './tastings/create/create-tasting.component';
 
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {
@@ -20,9 +20,9 @@ import {
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BeerService} from "./beers/services/beer.service";
 import {CreateBeerComponent} from './beers/create-beer/create-beer.component';
-import {ListGivingComponent} from './givings/list/list-givings.component';
+import {ListTastingComponent} from './tastings/list/list-tastings.component';
 import {SelectBeerComponent} from './beers/select-beer/select-beer.component';
-import {GivingService} from "./givings/services/giving.service";
+import {TastingService} from "./tastings/services/tasting.service";
 import {CreateUserComponent} from './users/create/create-user.component';
 import {ViewUserComponent} from './users/view/view-user.component';
 import {ListUsersComponent} from './users/list/list-users.component';
@@ -36,6 +36,7 @@ import {ListBeersComponent} from "./beers/list/list-beers.component";
 import {UserService} from "./users/services/user.service";
 import {PageNotFoundComponent} from "./errorhandling/page-not-found.component";
 import {SelectUserComponent} from "./users/select/select-user.component";
+import {ViewTastingComponent} from "./tastings/view/view-tasting.component";
 
 
 const appRoutes: Routes = [
@@ -43,18 +44,20 @@ const appRoutes: Routes = [
   {path: 'list-users', component: ListUsersComponent},
   {path: 'create-beer', component: CreateBeerComponent},
   {path: 'list-beers', component: ListBeersComponent},
-  {path: 'create-giving', component: CreateGivingComponent},
-  {path: 'list-givings', component: ListGivingComponent},
+  {path: 'create-tasting', component: CreateTastingComponent},
+  {path: 'list-tastings', component: ListTastingComponent},
+  {path: 'next-tasting', component: ViewTastingComponent},
   {path: '**', component: PageNotFoundComponent},
-  {path: '', redirectTo: '/', pathMatch: 'full'}
+  {path: '', redirectTo: '/next-tasting', pathMatch: 'full'}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateGivingComponent,
+    CreateTastingComponent,
+    ViewTastingComponent,
     CreateBeerComponent,
-    ListGivingComponent,
+    ListTastingComponent,
     SelectBeerComponent,
     CreateUserComponent,
     SelectUserComponent,
@@ -89,7 +92,7 @@ const appRoutes: Routes = [
       {enableTracing: false} // <-- debugging purposes only
     )
   ],
-  providers: [BeerService, GivingService, UserService],
+  providers: [BeerService, TastingService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

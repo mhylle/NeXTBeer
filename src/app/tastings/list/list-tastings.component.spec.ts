@@ -1,20 +1,20 @@
 // import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 //
-// import { CreateGivingComponent } from './create-giving.component';
+// import { ListTastingComponent } from './view.component';
 //
-// describe('CreateGivingComponent', () => {
-//   let component: CreateGivingComponent;
-//   let fixture: ComponentFixture<CreateGivingComponent>;
+// describe('ListTastingComponent', () => {
+//   let component: ListTastingComponent;
+//   let fixture: ComponentFixture<ListTastingComponent>;
 //
 //   beforeEach(async(() => {
 //     TestBed.configureTestingModule({
-//       declarations: [ CreateGivingComponent ]
+//       declarations: [ ListTastingComponent ]
 //     })
 //     .compileComponents();
 //   }));
 //
 //   beforeEach(() => {
-//     fixture = TestBed.createComponent(CreateGivingComponent);
+//     fixture = TestBed.createComponent(ListTastingComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

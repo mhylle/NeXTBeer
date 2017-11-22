@@ -19,7 +19,7 @@ NeXTBeer is a page designed to help inform Team Integration when the next beer w
 ## Requirements
 * 
 * Mail functionality
-* Schedule the next beer giving
+* Schedule the next beer tasting
 * Automatically determine who should give the next beer
 * ?? 
 

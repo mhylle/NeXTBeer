@@ -1,7 +1,7 @@
 import {Beer} from "../beers/Beer";
 import {User} from "../users/User";
 
-export class Giving {
+export class Tasting {
   id: string;
   name: string;
   beer: Beer;

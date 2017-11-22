@@ -1,6 +1,6 @@
 import {async, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
-import {CreateGivingComponent} from "./givings/create-giving/create-giving.component";
+import {CreateTastingComponent} from "./tastings/create-tasting/create-tasting.component";
 import {CreateBeerComponent} from "./beers/create-beer/create-beer.component";
 import {
   MatButtonModule,
@@ -37,7 +37,7 @@ describe('AppComponent', () => {
         BrowserAnimationsModule
       ],
       declarations: [
-        AppComponent, CreateGivingComponent, CreateBeerComponent
+        AppComponent, CreateTastingComponent, CreateBeerComponent
       ],
       providers: [
         BeerService

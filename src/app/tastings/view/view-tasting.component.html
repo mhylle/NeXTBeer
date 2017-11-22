@@ -1,0 +1,23 @@
+<div class="panel">
+  <div>Next tasting:</div>
+      <div class="label">Giver</div>
+      <div>{{tasting.giver?.firstname}} {{tasting.giver?.familyname}}</div>
+      <div class="label">Beer</div>
+      <div>{{tasting.beer?.name}}</div>
+      <div class="label">Date</div>
+      <div>{{tasting.time.day}}/{{tasting.time.month}}-{{tasting.time.year}}</div>
+      <div class="label">Time</div>
+      <div>{{tasting.time.hour}}:{{tasting.time.minute}}</div>
+      <div class="label">Sted</div>
+      <div>{{tasting.location}}</div>
+
+      <div>
+        <div class="label">Untappd</div>
+        <div *ngFor="let user of users">
+          <div *ngIf="user.untappdId">
+            {{user.firstname}} {{user.familyname}} has rated {{tasting.beer.name}} at {{getBeerRatingByUser(user,
+            tasting.beer)}}
+          </div>
+        </div>
+      </div>
+</div>
