@@ -1,25 +1,25 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { ListUsersComponent } from './list-user.component';
-
-describe('ListUsersComponent', () => {
-  let component: ListUsersComponent;
-  let fixture: ComponentFixture<ListUsersComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ ListUsersComponent ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(ListUsersComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+// import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+//
+// import {ListBeersComponent} from './list-beers.component';
+//
+// describe('ListBeersComponent', () => {
+//   let component: ListBeersComponent;
+//   let fixture: ComponentFixture<ListBeersComponent>;
+//
+//   beforeEach(async(() => {
+//     TestBed.configureTestingModule({
+//       declarations: [ListBeersComponent]
+//     })
+//       .compileComponents();
+//   }));
+//
+//   beforeEach(() => {
+//     fixture = TestBed.createComponent(ListBeersComponent);
+//     component = fixture.componentInstance;
+//     fixture.detectChanges();
+//   });
+//
+//   it('should create', () => {
+//     expect(component).toBeTruthy();
+//   });
+// });

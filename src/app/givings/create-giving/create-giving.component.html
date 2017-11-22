@@ -42,6 +42,12 @@
     <select-beer (select)="beerSelected($event)"></select-beer>
   </div>
 </section>
+<section>
+  <div class="panel">
+    <div class="header">Giver</div>
+    <select-user (userSelected)="userSelected($event)"></select-user>
+  </div>
+</section>
 
 <div class="panel">
   <button mat-button (click)="createGiving()">Create</button>

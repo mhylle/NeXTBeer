@@ -3,6 +3,7 @@ import {Giving} from "../Giving";
 import {FormControl, Validators} from "@angular/forms";
 import {Beer} from "../../beers/Beer";
 import {GivingService} from "../services/giving.service";
+import {User} from "../../users/User";
 
 @Component({
   selector: 'create-giving',
@@ -37,6 +38,10 @@ export class CreateGivingComponent implements OnInit {
 
   beerSelected(beer: Beer) {
     this.newGiving.beer = beer;
+  }
+
+  userSelected(user: User) {
+    this.newGiving.giver = user;
   }
 
   createGiving() {

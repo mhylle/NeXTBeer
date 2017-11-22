@@ -35,6 +35,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {ListBeersComponent} from "./beers/list/list-beers.component";
 import {UserService} from "./users/services/user.service";
 import {PageNotFoundComponent} from "./errorhandling/page-not-found.component";
+import {SelectUserComponent} from "./users/select/select-user.component";
 
 
 const appRoutes: Routes = [
@@ -56,9 +57,11 @@ const appRoutes: Routes = [
     ListGivingComponent,
     SelectBeerComponent,
     CreateUserComponent,
+    SelectUserComponent,
     ViewUserComponent,
     ListUsersComponent,
     ListBeersComponent,
+
     PageNotFoundComponent
   ],
   imports: [
