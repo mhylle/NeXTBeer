@@ -4,7 +4,7 @@
   <div *ngFor="let user of users">
     <div>{{user.firstname}} {{user.familyname}}</div>
     <div>{{user.shortname}}</div>
-    <div *ngIf="user.untappdId">User is on Untappd as {{user.untappdId}}</div>
+    <div *ngIf="user.untappdId">User is on Untappd as {{user.untappdId}} and has {{user.totalBadges}} badges</div>
     <div *ngIf="!user.untappdId">User should register on Untappd.</div>
   </div>
 </div>

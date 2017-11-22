@@ -1,12 +1,27 @@
 <div class="panel">
-  <div>Givings:</div>
+  <div>Tatings:</div>
   <div>
     <div *ngFor="let giving of givings">
-      <div>Giver{{giving.giver?.firstname}} {{giving.giver?.familyname}}</div>
-      <div>Beer{{giving.beer?.name}}</div>
-      <div>Date: {{giving.time.day}}/{{giving.time.month}}-{{giving.time.year}}</div>
-      <div>Time: {{giving.time.hour}}:{{giving.time.minute}}</div>
-      <div>Sted: {{giving.location}}</div>
+      <div class="label">Giver</div>
+      <div>{{giving.giver?.firstname}} {{giving.giver?.familyname}}</div>
+      <div class="label">Beer</div>
+      <div>{{giving.beer?.name}}</div>
+      <div class="label">Date</div>
+      <div>{{giving.time.day}}/{{giving.time.month}}-{{giving.time.year}}</div>
+      <div class="label">Time</div>
+      <div>{{giving.time.hour}}:{{giving.time.minute}}</div>
+      <div class="label">Sted</div>
+      <div>{{giving.location}}</div>
+
+      <div>
+        <div>Untappd</div>
+        <div *ngFor="let user of users">
+          <div *ngIf="user.untappdId">
+            {{user.firstname}} {{user.familyname}} has rated {{giving.beer.name}} at {{getBeerRatingByUser(user,
+            giving.beer)}}
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

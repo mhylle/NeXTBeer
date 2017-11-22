@@ -4,4 +4,5 @@ export class User {
   familyname: string;
   shortname: string;
   untappdId: string;
+  totalBadges?: string;
 }

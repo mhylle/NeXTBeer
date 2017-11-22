@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {GivingService} from "../services/giving.service";
 import {Giving} from "../Giving";
+import {UserService} from "../../users/services/user.service";
+import {User} from "../../users/User";
+import {Beer} from "../../beers/Beer";
 
 @Component({
   selector: 'list-givings',
@@ -9,13 +12,20 @@ import {Giving} from "../Giving";
 })
 export class ListGivingComponent implements OnInit {
   givings: Giving[];
-
-  constructor(private givingService: GivingService) {
+  users: User[];
+  constructor(private givingService: GivingService, private userService: UserService) {
   }
 
   ngOnInit() {
     this.givingService.getGivings().subscribe(response => {
       this.givings = response;
+    });
+    this.userService.getUsers().subscribe(users => {
+      this.users = users;
     })
+  }
+
+  getBeerRatingByUser(user: User, beer: Beer) {
+    return 1;
   }
 }

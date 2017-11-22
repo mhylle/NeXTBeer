@@ -2,16 +2,21 @@ import {Injectable} from '@angular/core';
 import {User} from "../User";
 import {Observable} from "rxjs/Observable";
 import {AngularFireDatabase} from "angularfire2/database";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable()
 export class UserService {
   users: Observable<User[]>;
 
-  constructor(private db: AngularFireDatabase) {
+  constructor(private db: AngularFireDatabase, private httpClient: HttpClient) {
   }
 
   addUser(user: User) {
     return this.db.list('/users').push(user);
+  }
+
+  getUntappdInfo(user:User)  {
+    return this.httpClient.get('https://api.untappd.com/v4/user/info/' + user.untappdId)
   }
 
   // getUserById(id: string) {
