@@ -31,9 +31,9 @@ export class ViewTastingComponent implements OnInit {
     return 1;
   }
 
-  calculatePercentageToTasting() {
+  calculatePercentageToTasting() : string{
     if (this.tasting == null) {
-      return 0;
+      return "00";
     }
     let creationTime = this.tasting.creationTime;
     let time = this.tasting.time;
@@ -61,11 +61,16 @@ export class ViewTastingComponent implements OnInit {
 
     let length = serv - create;
     let left = serv - nowTime;
-
+    let result: string= "";
     if (length > 0) {
-      return Math.round(1 - ((left - length) * 100 / length) * 100);
+      let value = Math.round(1 - ((left - length) * 100 / length) * 100);
+      if (value < 10) {
+        result = "0" + value;
+      } else {
+        result = "" + value;
+      }
     }
-    return 100;
+    return result;
   }
 
 }
