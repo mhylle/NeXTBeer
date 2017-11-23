@@ -2,10 +2,10 @@ import {Injectable} from '@angular/core';
 import {Tasting} from "../Tasting";
 import {AngularFireDatabase} from "angularfire2/database";
 import {Observable} from "rxjs/Observable";
+import {DateService} from "../../services/date.service";
 
 @Injectable()
 export class TastingService {
-  tastings: Observable<Tasting[]>;
 
   constructor(private db: AngularFireDatabase) {
   }
@@ -15,10 +15,6 @@ export class TastingService {
   }
 
   addTasting(tasting: Tasting) {
-    console.log('Adding tasting: '
-      + 'Name: ' + tasting.name
-      + '\nDate: ' + tasting.time.day + '/' + tasting.time.month + '-' + tasting.time.year);
-
     this.db.list<Tasting>('/tastings').push(tasting);
   }
 
@@ -38,4 +34,25 @@ export class TastingService {
   //   return null;
   // }
 
+  getNextTasting(tastings: Tasting[]): Tasting {
+    if (tastings.length == 0) {
+      return null;
+    }
+    tastings.sort((a, b) => {
+      let aTime = new Date();
+      aTime.setHours(a.time.hour);
+      aTime.setMinutes(a.time.minute);
+      aTime.setDate(a.time.day);
+      aTime.setMonth(a.time.month - 1);
+      aTime.setFullYear(a.time.year);
+      let bTime = new Date();
+      bTime.setHours(b.time.hour);
+      bTime.setMinutes(b.time.minute);
+      bTime.setDate(b.time.day);
+      bTime.setMonth(b.time.month - 1);
+      bTime.setFullYear(b.time.year);
+      return aTime.valueOf() - bTime.valueOf()
+    });
+    return tastings[0];
+  }
 }

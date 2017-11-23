@@ -19,15 +19,9 @@ export class ViewTastingComponent implements OnInit {
 
   ngOnInit() {
     this.tastingService.getTastings().subscribe(response => {
-      let now = new Date();
-      for (var i = 0; i < response.length; i++) {
-        let tasting = response[i];
-
-        if (tasting.time.day >= now.getDate() && tasting.time.month >= now.getMonth()+1 && tasting.time.year >= now.getFullYear()) {
-          this.tasting = tasting;
-        }
-      }
+      this.tasting = this.tastingService.getNextTasting(response);
     });
+
     this.userService.getUsers().subscribe(users => {
       this.users = users;
     });
@@ -35,6 +29,43 @@ export class ViewTastingComponent implements OnInit {
 
   getBeerRatingByUser(user: User, beer: Beer) {
     return 1;
+  }
+
+  calculatePercentageToTasting() {
+    if (this.tasting == null) {
+      return 0;
+    }
+    let creationTime = this.tasting.creationTime;
+    let time = this.tasting.time;
+
+    let creationDate = new Date();
+    creationDate.setDate(creationTime.day);
+    creationDate.setMonth(creationTime.month);
+    creationDate.setFullYear(creationTime.year);
+    creationDate.setHours(creationTime.hour);
+    creationDate.setMinutes(creationTime.minute);
+
+    let servingDate = new Date();
+    servingDate.setDate(time.day);
+    servingDate.setMonth(time.month);
+    servingDate.setFullYear(time.year);
+    servingDate.setHours(time.hour);
+    servingDate.setMinutes(time.minute);
+
+    let now = new Date();
+
+
+    let create = creationDate.valueOf() / 1000000;
+    let serv = servingDate.valueOf() / 1000000;
+    let nowTime = now.valueOf() / 1000000;
+
+    let length = serv - create;
+    let left = serv - nowTime;
+
+    if (length > 0) {
+      return Math.round(1 - ((left - length) * 100 / length) * 100);
+    }
+    return 100;
   }
 
 }

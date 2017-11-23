@@ -28,8 +28,10 @@ export class CreateTastingComponent implements OnInit {
       month: 0,
       year: 0,
       hour: 14,
-      minute: 0
+      minute: 30
     };
+    this.newTasting.location = "På Kontoret";
+
   }
 
   ngOnInit(): void {
@@ -45,15 +47,19 @@ export class CreateTastingComponent implements OnInit {
   }
 
   createTasting() {
-    console.log(this.newTasting.time.hour);
-    console.log(this.tastingTime);
-    console.log(this.newTasting.beer.name);
-    console.log('Adding tasting: '
-      + 'Name: ' + this.newTasting.name
-      + '\nDate: ' + this.newTasting.time.day + '/' + this.newTasting.time.month + '-' + this.newTasting.time.year);
+
     this.newTasting.time.day = this.tastingTime.getDate();
     this.newTasting.time.month = this.tastingTime.getMonth() + 1;
     this.newTasting.time.year = this.tastingTime.getFullYear();
+
+    let now = new Date();
+    this.newTasting.creationTime = {
+      hour: now.getHours(),
+      minute: now.getMinutes(),
+      day: now.getDate(),
+      month: now.getMonth() + 1,
+      year: now.getFullYear()
+    };
     this.tastingService.addTasting(this.newTasting);
     this.newTasting = new Tasting();
     this.newTasting.time = {
@@ -61,7 +67,7 @@ export class CreateTastingComponent implements OnInit {
       month: 0,
       year: 0,
       hour: 14,
-      minute: 0
+      minute: 30
     };
   }
 }

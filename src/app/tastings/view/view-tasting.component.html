@@ -25,11 +25,14 @@
     <div class="row">
       <div class="label">Untappd</div>
       <div *ngFor="let user of users" class="row">
-        <div *ngIf="user.untappdId">
-          {{user.firstname}} {{user.familyname}} has rated {{tasting.beer.name}} at {{getBeerRatingByUser(user,
-          tasting.beer)}}
+        <div *ngIf="user?.untappdId">
+          {{user.firstname}} {{user.familyname}} has rated {{tasting?.beer.name}} at {{getBeerRatingByUser(user,
+          tasting?.beer)}}
         </div>
       </div>
     </div>
   </div>
+
+  <div>We are currently filling the mugs.</div>
+  <div><img src="/assets/images/progress/beermug_00{{calculatePercentageToTasting()}}.jpg" width="200px" border="1" title="{{calculatePercentageToTasting()}}"></div>
 </div>

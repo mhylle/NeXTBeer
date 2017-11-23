@@ -13,6 +13,13 @@ export class Tasting {
     year: number,
     hour: number,
     minute: number
-  }
+  };
+  creationTime: {
+    day: number,
+    month: number,
+    year: number,
+    hour: number,
+    minute: number
+  };
   location: string;
 }
