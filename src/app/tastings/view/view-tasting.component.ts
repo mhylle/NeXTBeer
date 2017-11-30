@@ -40,13 +40,29 @@ export class ViewTastingComponent implements OnInit {
     if (beer == null || user == null) {
       return 0;
     }
-    if (beer.name == 'Londons Pride' && user.untappdId == 'mhylle') {
-      return 4;
+    let result = 1;
+    let username: string = user.untappdId;
+    if (beer.name == 'Londons Pride') {
+      switch (username) {
+        case "mhylle":
+          result = 4;
+          break;
+        case "nyby":
+          result = 3.75;
+          break;
+      }
     }
-    if (beer.name == 'Warsteiner' && user.untappdId == 'mhylle') {
-      return 3;
+    if (beer.name == 'Warsteiner') {
+      switch (username) {
+        case "mhylle":
+          result = 3;
+          break;
+        case "nyby":
+          result = 3;
+          break;
+      }
     }
-    return 1;
+    return result;
   }
 
   updateTimeToBeer(tick) {
