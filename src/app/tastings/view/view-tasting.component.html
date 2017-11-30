@@ -3,9 +3,9 @@
     {{tasting?.beer?.name}}
   </div>
 
-  <div><img src="assets/images//hero01_07.png" width="200px"></div>
+  <div><img src="assets/images//hero01_07.png" width="400px"></div>
   <div>They should be full in</div>
-  <div>{{hoursRemaining}} hours
+  <div class="hit-the-floor">{{hoursRemaining}} hours
     <span *ngIf="minutesRemaining < 10">0</span>{{minutesRemaining}}
     <span *ngIf="minutesRemaining== 1">minute</span><span *ngIf="minutesRemaining != 1">minutes</span> and
     <span *ngIf="secondsRemaining < 10">0</span>{{secondsRemaining}}
