@@ -7,7 +7,6 @@ import {Beer} from "../../beers/Beer";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
 import {Subscription} from "rxjs/Subscription";
 
-
 @Component({
   selector: 'view-tasting',
   templateUrl: './view-tasting.component.html',
