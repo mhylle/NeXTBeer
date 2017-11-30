@@ -14,9 +14,9 @@ import {Observable} from "rxjs";
 export class ViewTastingComponent implements OnInit {
   tasting: Tasting;
   users: User[];
-  private hoursRemaining: number;
-  private minutesRemaining: number;
-  private secondsRemaining: number;
+  hoursRemaining: number;
+  minutesRemaining: number;
+  secondsRemaining: number;
 
   constructor(private tastingService: TastingService, private userService: UserService) {
   }
