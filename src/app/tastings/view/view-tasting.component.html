@@ -1,39 +1,26 @@
-<div *ngIf="tasting"><h3>Next tasting</h3></div>
 <div style="text-align: center">
-
-  <div>We are currently filling the mugs.</div>
-  <div><img src="assets/images/progress/beermug_00{{calculatePercentageToTasting()}}.jpg" width="200px" border="1" title="{{100-calculatePercentageToTasting()}}"></div>
-  <div class="panel">
-    <div class="row">
-      <div class="label">Host</div>
-      <div>{{tasting?.giver?.firstname}} {{tasting?.giver?.familyname}}</div>
-    </div>
-    <div class="row">
-      <div class="label">Beer</div>
-      <div class="values">{{tasting?.beer?.name}}</div>
-      <div class="additional">?</div>
-    </div>
-    <div class="row">
-      <div class="label">Date</div>
-      <div class="values">{{tasting?.time.day}}/{{tasting?.time.month}}-{{tasting?.time.year}}</div>
-    </div>
-    <div class="row">
-      <div class="label">Time</div>
-      <div class="values">{{tasting?.time.hour}}:{{tasting?.time.minute}}</div>
-    </div>
-    <div class="row">
-      <div class="label">Sted</div>
-      <div class="values">{{tasting?.location}}</div>
-    </div>
-    <div class="row">
-      <div class="label">Untappd</div>
-      <div *ngFor="let user of users" class="row">
-        <div *ngIf="user?.untappdId">
-          {{user.firstname}} {{user.familyname}} has rated {{tasting?.beer.name}} at {{getBeerRatingByUser(user,
-          tasting?.beer)}}
-        </div>
-      </div>
-    </div>
+  <div>{{tasting?.giver?.firstname}} {{tasting?.giver?.familyname}} is currently filling the mugs with
+    {{tasting?.beer?.name}}
   </div>
 
+  <div><img src="assets/images//hero01_07.png" width="200px"></div>
+  <div>They should be full in</div>
+  <div>{{hoursRemaining}} hours
+    <span *ngIf="minutesRemaining < 10">0</span>{{minutesRemaining}}
+    <span *ngIf="minutesRemaining== 1">minute</span><span *ngIf="minutesRemaining != 1">minutes</span> and
+    <span *ngIf="secondsRemaining < 10">0</span>{{secondsRemaining}}
+    <span *ngIf="secondsRemaining == 1">second</span>
+    <span *ngIf="secondsRemaining != 1">seconds</span>
+  </div>
+  <div>
+    The beer will be served {{tasting?.location}}
+  </div>
+</div>
+<div class="row">
+  <div *ngFor="let user of users" class="row">
+    <div *ngIf="user?.untappdId">
+      {{user.firstname}} {{user.familyname}} has rated {{tasting?.beer.name}} at {{getBeerRatingByUser(user,
+      tasting?.beer)}}
+    </div>
+  </div>
 </div>

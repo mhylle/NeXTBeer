@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Tasting} from "../Tasting";
 import {AngularFireDatabase} from "angularfire2/database";
 import {Observable} from "rxjs/Observable";
-import {DateService} from "../../services/date.service";
 
 @Injectable()
 export class TastingService {
@@ -53,6 +52,27 @@ export class TastingService {
       bTime.setFullYear(b.time.year);
       return aTime.valueOf() - bTime.valueOf()
     });
-    return tastings[0];
+
+    let now = new Date();
+    for (let i = 0; i < tastings.length; i++) {
+      let timeOfTasting = this.calculateDate(tastings[i]);
+      let timeDifference = timeOfTasting.valueOf() - now.valueOf();
+      if (timeDifference >= 0) {
+        return tastings[i];
+      }
+    }
+
+    return null;
+  }
+
+  private calculateDate(tasting: Tasting) {
+    let timeOfCake = new Date();
+    timeOfCake.setFullYear(tasting.time.year);
+    timeOfCake.setMonth(tasting.time.month - 1);
+    timeOfCake.setDate(tasting.time.day);
+    timeOfCake.setHours(tasting.time.hour);
+    timeOfCake.setMinutes(tasting.time.minute);
+
+    return timeOfCake;
   }
 }

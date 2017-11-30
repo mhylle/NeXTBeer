@@ -21,5 +21,6 @@ export class Tasting {
     hour: number,
     minute: number
   };
+  datetime?: Date;
   location: string;
 }
