@@ -1,22 +1,25 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {TastingService} from "../services/tasting.service";
 import {Tasting} from "../Tasting";
 import {UserService} from "../../users/services/user.service";
 import {User} from "../../users/User";
 import {Beer} from "../../beers/Beer";
-import {Observable} from "rxjs";
+import {TimerObservable} from "rxjs/observable/TimerObservable";
+import {Subscription} from "rxjs/Subscription";
+
 
 @Component({
   selector: 'view-tasting',
   templateUrl: './view-tasting.component.html',
   styleUrls: ['./view-tasting.component.css']
 })
-export class ViewTastingComponent implements OnInit {
+export class ViewTastingComponent implements OnInit, OnDestroy {
   tasting: Tasting;
   users: User[];
   hoursRemaining: number;
   minutesRemaining: number;
   secondsRemaining: number;
+  private timeSubscription: Subscription;
 
   constructor(private tastingService: TastingService, private userService: UserService) {
   }
@@ -30,10 +33,15 @@ export class ViewTastingComponent implements OnInit {
       this.users = users;
     });
 
-    let timer = Observable.timer(0, 1000)
-    timer.subscribe(t => {
+    let timer = TimerObservable.create(0, 1000);
+    this.timeSubscription = timer.subscribe(t => {
       this.updateTimeToBeer(t);
     })
+  }
+
+
+  ngOnDestroy(): void {
+    this.timeSubscription.unsubscribe();
   }
 
   getBeerRatingByUser(user: User, beer: Beer) {
