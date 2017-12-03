@@ -1,8 +1,8 @@
 # NeXTBeer
 <!-- Badges section here. -->
-[![Build Status](https://travis-ci.org/mhylle/NeXTBeer.svg?branch=master)](https://travis-ci.org/mhylle/NeXTBeer)
+[![Build Status](https://travis-ci.org/mhylle/nextbeer.svg?branch=master)](https://travis-ci.org/mhylle/nextbeer)
 
-[![Dependency Status](https://david-dm.org/mhylle/NeXTBeer.svg)](https://david-dm.org/mhylle/NeXTBeer.svg)
+[![Dependency Status](https://david-dm.org/mhylle/nextbeer.svg)](https://david-dm.org/mhylle/nextbeer.svg)
 
 
 [![npm](https://img.shields.io/npm/v/npm.svg)]()
@@ -12,7 +12,7 @@
 <!--[![npm](https://img.shields.io/npm/dm/@angular/cli.svg)][npm-badge-url]-->
 
 The running version of the application can be found
-https://mhylle.github.io/NeXTBeer/
+https://mhylle.github.io/nextbeer/
 
 NeXTBeer is a page designed to help inform Team Integration when the next beer will be served.
 

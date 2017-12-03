@@ -2,13 +2,13 @@ version: 2
 
 # Settings common to each job.
 anchor_1: &defaults
-  working_directory: ~/NeXTBeer
+  working_directory: ~/nextbeer
   docker:
     - image: mhylle/mhcontainer
 
 # Restore cache based on package-lock.json checksum for branch.
 anchor_2: &restore_cache_defaults
-    key: mhylle-NeXTBeer-{{ checksum "package-lock.json" }}
+    key: mhylle-nextbeer-{{ checksum "package-lock.json" }}
 
 # Attach workspace that contains:
 # - dist/ : built cli
@@ -28,7 +28,7 @@ jobs:
       - run: npm install --quiet
       - run: npm run build
       - save_cache:
-          key: mhylle-NeXTBeer-{{ checksum "package-lock.json" }}
+          key: mhylle-nextbeer-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
 
@@ -56,15 +56,15 @@ jobs:
       - restore_cache:
           <<: *restore_cache_defaults
       - run: mkdir /workspace
-      - run: mkdir /workspace/mhylle-NeXTBeer-e2e-default
+      - run: mkdir /workspace/mhylle-nextbeer-e2e-default
       # Ignore all tests, we just want the setup step to persist it to the workspace.
-      - run: node tests/run_e2e.js --tmpdir=/workspace/mhylle-NeXTBeer-e2e-default --ignore=**/*
+      - run: node tests/run_e2e.js --tmpdir=/workspace/mhylle-nextbeer-e2e-default --ignore=**/*
       - run: mv dist /workspace/
       - persist_to_workspace:
           root: /workspace
           paths:
             - dist/
-            - mhylle-NeXTBeer-e2e-default/
+            - mhylle-nextbeer-e2e-default/
 
   e2e-0:
     <<: *defaults
@@ -75,7 +75,7 @@ jobs:
       - attach_workspace:
           <<: *attach_workspace_defaults
       - run: cp -r /workspace/dist/ ./
-      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-NeXTBeer-e2e-default/test-project --nb-shards=4 --shard=0 --nosilent
+      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-nextbeer-e2e-default/test-project --nb-shards=4 --shard=0 --nosilent
 
   e2e-1:
     <<: *defaults
@@ -86,7 +86,7 @@ jobs:
       - attach_workspace:
           <<: *attach_workspace_defaults
       - run: cp -r /workspace/dist/ ./
-      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-NeXTBeer-e2e-default/test-project --nb-shards=4 --shard=1 --nosilent
+      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-nextbeer-e2e-default/test-project --nb-shards=4 --shard=1 --nosilent
 
   e2e-2:
     <<: *defaults
@@ -97,7 +97,7 @@ jobs:
       - attach_workspace:
           <<: *attach_workspace_defaults
       - run: cp -r /workspace/dist/ ./
-      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-NeXTBeer-e2e-default/test-project --nb-shards=4 --shard=2 --nosilent
+      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-nextbeer-e2e-default/test-project --nb-shards=4 --shard=2 --nosilent
 
   e2e-3:
     <<: *defaults
@@ -108,7 +108,7 @@ jobs:
       - attach_workspace:
           <<: *attach_workspace_defaults
       - run: cp -r /workspace/dist/ ./
-      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-NeXTBeer-e2e-default/test-project --nb-shards=4 --shard=3 --nosilent
+      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-nextbeer-e2e-default/test-project --nb-shards=4 --shard=3 --nosilent
 
 # E2E test for Angular nightly.
   e2e-setup-nightly:
@@ -120,7 +120,7 @@ jobs:
       - run: mkdir /workspace
       - run: mkdir /workspace/angular-cli-e2e-nightly
       # Ignore all tests, we just want the setup step to persist it to the workspace.
-      - run: node tests/run_e2e.js --tmpdir=/workspace/mhylle-NeXTBeer-e2e-nightly --ignore=**/* --nightly
+      - run: node tests/run_e2e.js --tmpdir=/workspace/mhylle-nextbeer-e2e-nightly --ignore=**/* --nightly
       - run: mv dist /workspace/
       - persist_to_workspace:
           root: /workspace
@@ -137,7 +137,7 @@ jobs:
       - attach_workspace:
           <<: *attach_workspace_defaults
       - run: cp -r /workspace/dist/ ./
-      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-NeXTBeer-e2e-nightly/test-project --nb-shards=4 --shard=0 --nosilent --nightly
+      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-nextbeer-e2e-nightly/test-project --nb-shards=4 --shard=0 --nosilent --nightly
 
   e2e-1-nightly:
     <<: *defaults
@@ -148,7 +148,7 @@ jobs:
       - attach_workspace:
           <<: *attach_workspace_defaults
       - run: cp -r /workspace/dist/ ./
-      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-NeXTBeer-e2e-nightly/test-project --nb-shards=4 --shard=1 --nosilent --nightly
+      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-nextbeer-e2e-nightly/test-project --nb-shards=4 --shard=1 --nosilent --nightly
 
   e2e-2-nightly:
     <<: *defaults
@@ -159,7 +159,7 @@ jobs:
       - attach_workspace:
           <<: *attach_workspace_defaults
       - run: cp -r /workspace/dist/ ./
-      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-NeXTBeer-e2e-nightly/test-project --nb-shards=4 --shard=2 --nosilent --nightly
+      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-nextbeer-e2e-nightly/test-project --nb-shards=4 --shard=2 --nosilent --nightly
 
   e2e-3-nightly:
     <<: *defaults
@@ -170,7 +170,7 @@ jobs:
       - attach_workspace:
           <<: *attach_workspace_defaults
       - run: cp -r /workspace/dist/ ./
-      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-NeXTBeer-e2e-nightly/test-project --nb-shards=4 --shard=3 --nosilent --nightly
+      - run: xvfb-run -a node tests/run_e2e.js --nobuild --reuse=/workspace/mhylle-nextbeer-e2e-nightly/test-project --nb-shards=4 --shard=3 --nosilent --nightly
 
 workflows:
   version: 2
