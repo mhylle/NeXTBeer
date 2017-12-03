@@ -1,0 +1,48 @@
+.hicard {
+  -webkit-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.75);
+
+  border-radius: 2px;
+  margin: 4px;
+}
+
+.hicard-header {
+  border: 1px solid lightgray;
+  background-color: #e3d695;
+}
+
+
+.hicard-title {
+
+}
+
+.hicard-content {
+
+}
+
+.beer {
+  /*display: inline-block;*/
+
+}
+
+.beer-name {
+  /*margin-right: 8px;*/
+}
+.beer-type-label {
+  float: left;
+  margin-right: 8px;
+  font-weight: bold;
+}
+.beer-type {
+  float: left;
+  margin-right: 8px;
+}
+
+.beer-description {
+  /*float: left;*/
+  /*display: block;*/
+}
+.beer-type-container {
+  display: inline-block;
+}

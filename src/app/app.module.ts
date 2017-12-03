@@ -37,6 +37,7 @@ import {UserService} from "./users/services/user.service";
 import {PageNotFoundComponent} from "./errorhandling/page-not-found.component";
 import {SelectUserComponent} from "./users/select/select-user.component";
 import {ViewTastingComponent} from "./tastings/view/view-tasting.component";
+import {ListBeerImagesComponent} from "./beers/list/images/list-beer-images.component";
 
 
 const appRoutes: Routes = [
@@ -44,11 +45,12 @@ const appRoutes: Routes = [
   {path: 'list-users', component: ListUsersComponent},
   {path: 'create-beer', component: CreateBeerComponent},
   {path: 'list-beers', component: ListBeersComponent},
+  {path: 'list-beer-images', component: ListBeerImagesComponent},
   {path: 'create-tasting', component: CreateTastingComponent},
   {path: 'list-tastings', component: ListTastingComponent},
   {path: 'next-tasting', component: ViewTastingComponent},
   {path: '', redirectTo: '/next-tasting', pathMatch: 'full'},
-  {path: '**', component: PageNotFoundComponent}
+  {path: '**', component: ViewTastingComponent}
 ]
 
 @NgModule({
@@ -64,7 +66,7 @@ const appRoutes: Routes = [
     ViewUserComponent,
     ListUsersComponent,
     ListBeersComponent,
-
+    ListBeerImagesComponent,
     PageNotFoundComponent
   ],
   imports: [
