@@ -82,7 +82,6 @@ export class ViewTastingComponent implements OnInit, OnDestroy {
       this.tasting.datetime = timeOfBeer;
       let timeDifference = timeOfBeer.valueOf() - now.valueOf();
       if (timeDifference < 0) {
-        console.log('Less than 0');
         let minutes = Math.floor((Math.abs(timeDifference) / (1000 * 60)) % 60);
         let hours = Math.floor(Math.abs(timeDifference) / (1000 * 60 * 60));
         if (minutes <= 1 && hours == 0) {
