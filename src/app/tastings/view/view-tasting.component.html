@@ -1,26 +1,30 @@
-<div style="text-align: center">
-  <div>{{tasting?.giver?.firstname}} {{tasting?.giver?.familyname}} is currently filling the mugs with
-    {{tasting?.beer?.name}}
-  </div>
+<div *ngIf="!tasting">No tastings has been scheduled.</div>
+<div *ngIf="tastingOnGoing">We are currently drinking a beer</div>
+<div *ngIf="!tastingOnGoing">
+  <div style="text-align: center">
+    <div>{{tasting?.giver?.firstname}} {{tasting?.giver?.familyname}} is currently filling the mugs with
+      {{tasting?.beer?.name}}
+    </div>
 
-  <div><img src="assets/images//hero01_12.png" width="400px"></div>
-  <div>They should be full in</div>
-  <div class="hit-the-floor">{{hoursRemaining}} hours
-    <span *ngIf="minutesRemaining < 10">0</span>{{minutesRemaining}}
-    <span *ngIf="minutesRemaining== 1">minute</span><span *ngIf="minutesRemaining != 1">minutes</span> and
-    <span *ngIf="secondsRemaining < 10">0</span>{{secondsRemaining}}
-    <span *ngIf="secondsRemaining == 1">second</span>
-    <span *ngIf="secondsRemaining != 1">seconds</span>
+    <div><img src="assets/images//hero01_12.png" width="400px"></div>
+    <div>They should be full in</div>
+    <div class="hit-the-floor">{{hoursRemaining}} hours
+      <span *ngIf="minutesRemaining < 10">0</span>{{minutesRemaining}}
+      <span *ngIf="minutesRemaining== 1">minute</span><span *ngIf="minutesRemaining != 1">minutes</span> and
+      <span *ngIf="secondsRemaining < 10">0</span>{{secondsRemaining}}
+      <span *ngIf="secondsRemaining == 1">second</span>
+      <span *ngIf="secondsRemaining != 1">seconds</span>
+    </div>
+    <div>
+      The beer will be served {{tasting?.location}}
+    </div>
   </div>
-  <div>
-    The beer will be served {{tasting?.location}}
-  </div>
-</div>
-<div class="row">
-  <div *ngFor="let user of users" class="row">
-    <div *ngIf="user?.untappdId">
-      {{user.firstname}} {{user.familyname}} has rated {{tasting?.beer.name}} at {{getBeerRatingByUser(user,
-      tasting?.beer)}}
+  <div class="row">
+    <div *ngFor="let user of users" class="row">
+      <div *ngIf="user?.untappdId">
+        {{user.firstname}} {{user.familyname}} has rated {{tasting?.beer.name}} at {{getBeerRatingByUser(user,
+        tasting?.beer)}}
+      </div>
     </div>
   </div>
 </div>

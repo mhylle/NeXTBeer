@@ -18,6 +18,9 @@ export class ViewTastingComponent implements OnInit, OnDestroy {
   hoursRemaining: number;
   minutesRemaining: number;
   secondsRemaining: number;
+
+  tastingOnGoing: boolean = false;
+
   private timeSubscription: Subscription;
 
   constructor(private tastingService: TastingService, private userService: UserService) {
@@ -78,12 +81,24 @@ export class ViewTastingComponent implements OnInit, OnDestroy {
     if (timeOfBeer != null) {
       this.tasting.datetime = timeOfBeer;
       let timeDifference = timeOfBeer.valueOf() - now.valueOf();
-      let seconds = Math.floor(timeDifference / 1000) % 60;
-      let minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
-      let hours = Math.floor((timeDifference / (1000 * 60 * 60)));
-      this.secondsRemaining = seconds;
-      this.minutesRemaining = minutes;
-      this.hoursRemaining = hours;
+      if (timeDifference < 0) {
+        console.log('Less than 0');
+        let minutes = Math.floor((Math.abs(timeDifference) / (1000 * 60)) % 60);
+        let hours = Math.floor(Math.abs(timeDifference) / (1000 * 60 * 60));
+        if (minutes <= 30 && hours == 0) {
+          this.tastingOnGoing = true;
+        }
+      } else {
+        this.tastingOnGoing = false;
+        let seconds = Math.floor(timeDifference / 1000) % 60;
+        let minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+        let hours = Math.floor((timeDifference / (1000 * 60 * 60)));
+        this.secondsRemaining = seconds;
+        this.minutesRemaining = minutes;
+        this.hoursRemaining = hours;
+      }
+    } else  {
+
     }
   }
 

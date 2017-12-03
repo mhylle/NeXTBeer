@@ -59,6 +59,13 @@ export class TastingService {
       let timeDifference = timeOfTasting.valueOf() - now.valueOf();
       if (timeDifference >= 0) {
         return tastings[i];
+      } else {
+        console.log('Less than 0');
+        let minutes = Math.floor((Math.abs(timeDifference) / (1000 * 60)) % 60);
+        let hours = Math.floor(Math.abs(timeDifference) / (1000 * 60 * 60));
+        if (minutes <= 30 && hours == 0) {
+          return tastings[i];
+        }
       }
     }
 
