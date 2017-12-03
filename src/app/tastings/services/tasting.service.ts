@@ -61,14 +61,14 @@ export class TastingService {
         return tastings[i];
       } else {
         console.log('Less than 0');
-        let minutes = Math.floor((Math.abs(timeDifference) / (1000 * 60)) % 60);
-        let hours = Math.floor(Math.abs(timeDifference) / (1000 * 60 * 60));
-        if (minutes <= 30 && hours == 0) {
+        let minutes = Math.abs(Math.floor((timeDifference / (1000 * 60)) % 60));
+        let hours = Math.abs(Math.floor(timeDifference / (1000 * 60 * 60)));
+        if (minutes <= 1 && hours == 0) {
           return tastings[i];
         }
       }
     }
-
+    console.log('return null');
     return null;
   }
 

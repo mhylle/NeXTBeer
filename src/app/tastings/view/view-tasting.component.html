@@ -1,6 +1,6 @@
 <div *ngIf="!tasting">No tastings has been scheduled.</div>
 <div *ngIf="tastingOnGoing">We are currently drinking a beer</div>
-<div *ngIf="!tastingOnGoing">
+<div *ngIf="!tastingOnGoing && tasting">
   <div style="text-align: center">
     <div>{{tasting?.giver?.firstname}} {{tasting?.giver?.familyname}} is currently filling the mugs with
       {{tasting?.beer?.name}}
