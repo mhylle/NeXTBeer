@@ -18,6 +18,7 @@ export class CreateBeerComponent implements OnInit {
   }
 
   createBeer() {
+
     this.beerService.addBeer(this.newBeer).then(value => {
       this.newBeer = new Beer();
       this.beerCreated.emit(value);
