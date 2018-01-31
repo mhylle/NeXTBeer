@@ -1,6 +1,5 @@
 import {async, TestBed} from '@angular/core/testing';
 import {AppComponent} from './app.component';
-import {CreateTastingComponent} from "./tastings/create-tasting/create-tasting.component";
 import {CreateBeerComponent} from "./beers/create-beer/create-beer.component";
 import {
   MatButtonModule,
@@ -17,6 +16,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BrowserModule} from "@angular/platform-browser";
 import {BeerService} from "./beers/services/beer.service";
+import {CreateTastingComponent} from "./tastings/create/create-tasting.component";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
