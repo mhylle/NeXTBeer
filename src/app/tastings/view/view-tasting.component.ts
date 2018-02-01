@@ -101,9 +101,18 @@ export class ViewTastingComponent implements OnInit, OnDestroy {
         this.minutesRemaining = minutes;
         this.hoursRemaining = hours;
       }
-    } else  {
-
     }
+  }
+
+  calculateTimeToBeer(from: Date, to: Date) {
+
+    let timeDifference = to.valueOf() - from.valueOf();
+    let seconds = Math.floor(timeDifference / 1000) % 60;
+    let minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+    let hours = Math.floor((timeDifference / (1000 * 60 * 60)));
+    this.secondsRemaining = seconds;
+    this.minutesRemaining = minutes;
+    this.hoursRemaining = hours;
   }
 
   private calculateDate(tasting: Tasting) {
@@ -111,9 +120,7 @@ export class ViewTastingComponent implements OnInit, OnDestroy {
       return;
     }
     let timeOfBeer = new Date();
-    timeOfBeer.setFullYear(tasting.time.year);
-    timeOfBeer.setMonth(tasting.time.month - 1);
-    timeOfBeer.setDate(tasting.time.day);
+    timeOfBeer.setFullYear(tasting.time.year, tasting.time.month - 1, tasting.time.day);
     timeOfBeer.setHours(tasting.time.hour);
     timeOfBeer.setMinutes(tasting.time.minute);
     timeOfBeer.setSeconds(0);
