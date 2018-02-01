@@ -33,8 +33,9 @@ export class BeerService {
     return this.db.list<Beer>('/beers').valueChanges();
   }
 
-  addBeer(beer: Beer) {
-    return this.db.list('/beers').push(beer);
+  addBeer(beer: Beer) : Observable<Beer[]>{
+    this.db.list('/beers').push(beer)
+    return this.db.list<Beer>('/beers').valueChanges();
     // this.beers.push(beer);
   }
 
