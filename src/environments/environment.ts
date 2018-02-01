@@ -8,11 +8,11 @@
 export const environment = {
   production: false,
   firebase : {
-    apiKey: "AIzaSyDLwdmYOX0SJ--AaBXvMdcXQ5d5uRnB-C8",
-    authDomain: "nextbeer-9812a.firebaseapp.com",
-    databaseURL: "https://nextbeer-9812a.firebaseio.com",
-    projectId: "nextbeer-9812a",
-    storageBucket: "nextbeer-9812a.appspot.com",
-    messagingSenderId: "276936174152"
+    apiKey: "AIzaSyDYmqbZEmDHZHKrxYUq80f6_4rrVD6W08s",
+    authDomain: "nextbeer-beta.firebaseapp.com",
+    databaseURL: "https://nextbeer-beta.firebaseio.com",
+    projectId: "nextbeer-beta",
+    storageBucket: "nextbeer-beta.appspot.com",
+    messagingSenderId: "289944695768"
   }
 };
