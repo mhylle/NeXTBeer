@@ -1,7 +1,7 @@
-<div class="panel">
+
   <div>Tatings:</div>
   <div>
-    <div *ngFor="let tasting of tastings">
+    <div *ngFor="let tasting of tastings" class="panel tasting">
       <div class="label">Giver</div>
       <div>{{tasting.giver?.firstname}} {{tasting.giver?.familyname}}</div>
       <div class="label">Beer</div>
@@ -13,15 +13,15 @@
       <div class="label">Sted</div>
       <div>{{tasting.location}}</div>
 
-      <div>
-        <div class="label">Untappd</div>
-        <div *ngFor="let user of users">
-          <div *ngIf="user.untappdId">
-            {{user.firstname}} {{user.familyname}} has rated {{tasting.beer.name}} at {{getBeerRatingByUser(user,
-            tasting.beer)}}
-          </div>
-        </div>
-      </div>
+      <!--<div>-->
+        <!--<div class="label">Untappd</div>-->
+        <!--<div *ngFor="let user of users">-->
+          <!--<div *ngIf="user.untappdId">-->
+            <!--{{user.firstname}} {{user.familyname}} has rated {{tasting.beer.name}} at {{getBeerRatingByUser(user,-->
+            <!--tasting.beer)}}-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
     </div>
   </div>
-</div>
+
