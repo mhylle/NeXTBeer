@@ -16,8 +16,8 @@ describe('CreateBeerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule, BrowserModule, MatInputModule,BrowserAnimationsModule,
-        AngularFireDatabaseModule,AngularFireModule.initializeApp(environment.firebase)],
+      imports: [FormsModule, BrowserModule, MatInputModule, BrowserAnimationsModule,
+        AngularFireDatabaseModule, AngularFireModule.initializeApp(environment.firebase)],
       declarations: [CreateBeerComponent],
       providers: [BeerService]
     })

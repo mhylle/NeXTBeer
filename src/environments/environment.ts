@@ -4,10 +4,9 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 
-
 export const environment = {
   production: false,
-  firebase : {
+  firebase: {
     apiKey: "AIzaSyDYmqbZEmDHZHKrxYUq80f6_4rrVD6W08s",
     authDomain: "nextbeer-beta.firebaseapp.com",
     databaseURL: "https://nextbeer-beta.firebaseio.com",

@@ -12,7 +12,9 @@ export class CreateBeerComponent implements OnInit {
   newBeer: Beer = new Beer();
   @Output()
   beerCreated: EventEmitter<Beer> = new EventEmitter();
-  constructor(private beerService: BeerService) { }
+
+  constructor(private beerService: BeerService) {
+  }
 
   ngOnInit() {
   }

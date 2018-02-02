@@ -19,7 +19,7 @@ export class ListUsersComponent implements OnInit {
     this.userService.getUsers().subscribe((response) => {
       this.users = response;
       for (let i = 0; i < this.users.length; i++) {
-        let user= this.users[i];
+        let user = this.users[i];
         user.totalBadges = "0";
         // this.getUntappdBadges(user).subscribe(result => {
         //   user.totalBadges = result.stats.total_badges;

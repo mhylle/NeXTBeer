@@ -73,7 +73,7 @@ describe('AppComponent', () => {
         ListUsersComponent, ListBeersComponent, ListBeerImagesComponent, PageNotFoundComponent
       ],
       providers: [
-        BeerService,{provide: APP_BASE_HREF, useValue: '/'}
+        BeerService, {provide: APP_BASE_HREF, useValue: '/'}
       ]
     }).compileComponents();
   }));

@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  firebase : {
+  firebase: {
 
     apiKey: "AIzaSyDLwdmYOX0SJ--AaBXvMdcXQ5d5uRnB-C8",
     authDomain: "nextbeer-9812a.firebaseapp.com",

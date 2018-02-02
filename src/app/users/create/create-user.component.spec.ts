@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CreateUserComponent } from './create-user.component';
+import {CreateUserComponent} from './create-user.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {environment} from "../../../environments/environment";
 import {MatInputModule} from "@angular/material";
@@ -17,13 +17,13 @@ describe('CreateUserComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports:[FormsModule, BrowserModule, MatInputModule,BrowserAnimationsModule,
-        AngularFireDatabaseModule,AngularFireModule.initializeApp(environment.firebase), HttpClientModule],
-      declarations: [ CreateUserComponent ],
-      providers:[UserService]
+      imports: [FormsModule, BrowserModule, MatInputModule, BrowserAnimationsModule,
+        AngularFireDatabaseModule, AngularFireModule.initializeApp(environment.firebase), HttpClientModule],
+      declarations: [CreateUserComponent],
+      providers: [UserService]
 
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

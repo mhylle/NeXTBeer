@@ -15,7 +15,7 @@ export class UserService {
     return this.db.list('/users').push(user);
   }
 
-  getUntappdInfo(user:User)  {
+  getUntappdInfo(user: User) {
     return this.httpClient.get('https://api.untappd.com/v4/user/info/' + user.untappdId)
   }
 
@@ -30,7 +30,7 @@ export class UserService {
   //
   // }
 
-  getUsers() : Observable<User[]>  {
+  getUsers(): Observable<User[]> {
     return this.db.list<User>('users').valueChanges();
   }
 

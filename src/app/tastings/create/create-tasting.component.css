@@ -2,10 +2,10 @@
   border: 1px solid black;
   border-radius: 5px;
   background-color: #ffefd5;
-  margin-top:4px;
-  -webkit-box-shadow: 1px 1px 2px 1px rgba(61,61,61,1);
-  -moz-box-shadow: 1px 1px 2px 1px rgba(61,61,61,1);
-  box-shadow: 1px 1px 2px 1px rgba(61,61,61,1);
+  margin-top: 4px;
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(61, 61, 61, 1);
+  -moz-box-shadow: 1px 1px 2px 1px rgba(61, 61, 61, 1);
+  box-shadow: 1px 1px 2px 1px rgba(61, 61, 61, 1);
   display: inline-block;
 }
 
@@ -13,10 +13,10 @@
   font-size: larger;
   font-weight: bold;
 }
+
 .sub-header {
   font-size: larger;
 }
-
 
 .tastingTime {
   position: relative;
@@ -36,13 +36,14 @@
 .tasting-hour {
   float: left;
   width: 75px;
-  margin-right:8px;
+  margin-right: 8px;
 }
 
 .tasting-minute {
   float: left;
   width: 75px;
 }
+
 .tasting-beer {
   float: left;
   width: 150px;
