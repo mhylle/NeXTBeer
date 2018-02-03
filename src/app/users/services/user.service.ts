@@ -2,42 +2,25 @@ import {Injectable} from '@angular/core';
 import {User} from "../User";
 import {Observable} from "rxjs/Observable";
 import {AngularFireDatabase} from "angularfire2/database";
-import {HttpClient} from "@angular/common/http";
 
 @Injectable()
 export class UserService {
-  users: Observable<User[]>;
+  // users: Observable<User[]>;
 
-  constructor(private db: AngularFireDatabase, private httpClient: HttpClient) {
+  constructor(private db: AngularFireDatabase) {
   }
 
   addUser(user: User) {
     return this.db.list('/users').push(user);
   }
 
-  getUntappdInfo(user: User) {
-    return this.httpClient.get('https://api.untappd.com/v4/user/info/' + user.untappdId)
-  }
-
-  // getUserById(id: string) {
-  //   return this.users.filter(user => user.id === id);
-  // }
-
-  // getUserByUntappdId(id: string) {
-  //   return this.users.filter((user) => {
-  //     user;
-  //   })
-  //
+  // getUntappdInfo(user: User) {
+  //   return this.httpClient.get('https://api.untappd.com/v4/user/info/' + user.untappdId)
   // }
 
   getUsers(): Observable<User[]> {
-    return this.db.list<User>('users').valueChanges();
+    return this.db.list<User>('/users').snapshotChanges().map(actions => {
+      return actions.map(action => ({key: action.key, ...action.payload.val()}));
+    });
   }
-
-  // updateUser(user: User) {
-  //   // Hack. do something about this...
-  //   let filteredUsers = this.users.filter(user => user.id !== user.id);
-  //   filteredUsers.push(user);
-  //   this.users = filteredUsers;
-  // }
 }

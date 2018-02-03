@@ -1,6 +1,6 @@
 <mat-form-field>
   <mat-select [(ngModel)]="selectedUser" (selectionChange)="onSelectUser()" [compareWith]="inputUser">
     <mat-option>None</mat-option>
-    <mat-option *ngFor="let user of users| async" [value]="user">{{user.firstname}} {{ user.familyname}}</mat-option>
+    <mat-option *ngFor="let user of users | async" [value]="user">{{user.firstname}} {{ user.familyname}}</mat-option>
   </mat-select>
 </mat-form-field>

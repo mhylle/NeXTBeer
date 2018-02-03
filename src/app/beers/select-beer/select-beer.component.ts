@@ -37,6 +37,6 @@ export class SelectBeerComponent implements OnInit {
   }
 
   inputBeer(b1: Beer, b2: Beer) {
-    return b1 != null && b2 != null && b1.id === b2.id;
+    return b1 != null && b2 != null && b1.name === b2.name;
   }
 }

@@ -26,14 +26,19 @@ export class ListTastingComponent implements OnInit {
     });
 
     this.userService.getUsers().subscribe(users => {
+      for (var i = 0; i < users.length; i++) {
+        let obj = users[i];
+        console.log(obj.shortname);
+
+      }
       this.users = users;
     })
   }
 
 
-  getBeerRatingByUser(user: User, beer: Beer) {
-    return 1;
-  }
+  // getBeerRatingByUser(user: User, beer: Beer) {
+  //   return 1;
+  // }
 
   sortTastings() {
     this.orderedTastings = this.tastings;

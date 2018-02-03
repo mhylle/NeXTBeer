@@ -44,30 +44,8 @@ export class EditTastingComponent implements OnInit {
   userSelected(user: User) {
     this.tasting.giver = user;
   }
+
   updateTasting() {
     this.tastingService.updateTasting(this.tasting);
-  }
-  editTasting() {
-    // this.newTasting.time.day = this.tastingTime.getDate();
-    // this.newTasting.time.month = this.tastingTime.getMonth() + 1;
-    // this.newTasting.time.year = this.tastingTime.getFullYear();
-    //
-    // let now = new Date();
-    // this.newTasting.creationTime = {
-    //   hour: now.getHours(),
-    //   minute: now.getMinutes(),
-    //   day: now.getDate(),
-    //   month: now.getMonth() + 1,
-    //   year: now.getFullYear()
-    // };
-    // this.tastingService.addTasting(this.newTasting);
-    // this.newTasting = new Tasting();
-    // this.newTasting.time = {
-    //   day: 0,
-    //   month: 0,
-    //   year: 0,
-    //   hour: 14,
-    //   minute: 30
-    // };
   }
 }
