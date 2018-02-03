@@ -9,9 +9,6 @@
   </mat-card-header>
 
   <mat-card-content>
-    <div class="label">Key</div>
-    <div *ngIf="tasting.key">{{tasting.key}}</div>
-    <div *ngIf="!tasting.$key">No Key</div>
     <div class="label">Giver</div>
     <div>{{tasting.giver?.firstname}} {{tasting.giver?.familyname}}</div>
     <div class="label">Date</div>
@@ -25,16 +22,6 @@
     <button mat-button (click)="editTasting(tasting)">Edit</button>
     <button mat-button (click)="deleteTasting(tasting)">Delete</button>
   </mat-card-actions>
-  <!--<div>-->
-  <!--<div class="label">Untappd</div>-->
-  <!--<div *ngFor="let user of users">-->
-  <!--<div *ngIf="user.untappdId">-->
-  <!--{{user.firstname}} {{user.familyname}} has rated {{tasting.beer.name}} at {{getBeerRatingByUser(user,-->
-  <!--tasting.beer)}}-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
 </mat-card>
 
 

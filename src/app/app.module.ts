@@ -49,8 +49,9 @@ const appRoutes: Routes = [
   {path: 'list-beer-images', component: ListBeerImagesComponent},
   {path: 'create-tasting', component: CreateTastingComponent},
   {path: 'list-tastings', component: ListTastingComponent},
+  {path: 'edit-tasting', component: EditTastingComponent},
   {path: 'next-tasting', component: ViewTastingComponent},
-  {path: '', redirectTo: '/next-tasting', pathMatch: 'full'},
+  // {path: '', redirectTo: '/next-tasting', pathMatch: 'full'},
   {path: '**', component: ViewTastingComponent}
 ]
 

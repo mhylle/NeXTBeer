@@ -1,4 +1,4 @@
-<section>
+<section *ngIf="tasting">
   <div class="panel">
     <div class="header">Location and time</div>
     <div class="tastingTime">
@@ -13,13 +13,13 @@
 
       <div class="tasting-hour">
         <mat-form-field class="tasting-hour">
-          <input type="number" matInput placeholder="Hour" [(ngModel)]="newTasting.time.hour" min="0" max="23" size="4"
+          <input type="number" matInput placeholder="Hour" [(ngModel)]="tasting.time.hour" min="0" max="23" size="4"
                  required [formControl]="hourControl" name="tastingHour" class="tasting-hour">
         </mat-form-field>
       </div>
       <div class="tasting-minute">
         <mat-form-field class="tasting-minute">
-          <input type="number" class="smallInput" matInput placeholder="Minute" [(ngModel)]="newTasting.time.minute"
+          <input type="number" class="smallInput" matInput placeholder="Minute" [(ngModel)]="tasting.time.minute"
                  min="0" max="59" size="4"
                  required [formControl]="minuteControl" name="tastingMinute" class="tasting-minute">
         </mat-form-field>
@@ -29,27 +29,27 @@
       <div class="sub-header">Where</div>
       <div class="tasting-location">
         <mat-form-field>
-          <input type="text" matInput placeholder="The Office" [(ngModel)]="newTasting.location" required
+          <input type="text" matInput placeholder="The Office" [(ngModel)]="tasting.location" required
                  name="tastingLocation">
         </mat-form-field>
       </div>
     </div>
   </div>
 </section>
-<section>
+<section *ngIf="tasting">
   <div class="panel">
     <div class="header">Beer</div>
-    <select-beer (select)="beerSelected($event)"></select-beer>
+    <select-beer (select)="beerSelected($event)" [beer]="tasting.beer"></select-beer>
   </div>
 </section>
-<section>
+<section *ngIf="tasting">
   <div class="panel">
     <div class="header">Giver</div>
-    <select-user (userSelected)="userSelected($event)"></select-user>
+    <select-user (userSelected)="userSelected($event)" [user]="tasting.giver"></select-user>
   </div>
 </section>
 
-<div class="panel">
-  <button mat-button (click)="createTasting()">Create</button>
+<div class="panel" *ngIf="tasting">
+  <button mat-button (click)="updateTasting()">Update</button>
 </div>
 

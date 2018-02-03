@@ -1,7 +1,8 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {User} from "../User";
 import {UserService} from "../services/user.service";
 import {Observable} from "rxjs/Observable";
+import {Beer} from "../../beers/Beer";
 
 @Component({
   selector: 'select-user',
@@ -13,6 +14,9 @@ export class SelectUserComponent implements OnInit {
 
   selectedUser: User;
 
+  @Input()
+  user: User;
+
   @Output()
   userSelected: EventEmitter<User> = new EventEmitter();
 
@@ -21,11 +25,17 @@ export class SelectUserComponent implements OnInit {
 
   ngOnInit() {
     this.users = this.userService.getUsers();
+    if (this.user!= null) {
+      this.selectedUser= this.user;
+    }
   }
 
   onSelectUser() {
-
     this.userSelected.emit(this.selectedUser);
+  }
+
+  inputUser(u1: User, u2: User) {
+    return u1 != null && u2 != null && u1.id === u2.id;
   }
 
 }

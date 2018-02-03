@@ -6,6 +6,7 @@ import {Observable} from "rxjs/Observable";
 @Injectable()
 export class TastingService {
 
+  selectedTasting: Tasting;
   constructor(private db: AngularFireDatabase) {
   }
 
@@ -25,6 +26,14 @@ export class TastingService {
       return;
     }
     this.db.object('/tastings/' + tasting.key).remove();
+  }
+
+  updateTasting(tasting: Tasting) {
+    if (tasting == null || tasting.key ==  null) {
+      return;
+    }
+
+    this.db.object('/tastings/' + tasting.key).update(tasting);
   }
 
   getNextTasting(tastings: Tasting[]): Tasting {

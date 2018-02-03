@@ -4,6 +4,7 @@ import {FormControl, Validators} from "@angular/forms";
 import {Beer} from "../../beers/Beer";
 import {TastingService} from "../services/tasting.service";
 import {User} from "../../users/User";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'edit-tasting',
@@ -23,11 +24,17 @@ export class EditTastingComponent implements OnInit {
   @Output()
   add: EventEmitter<Tasting> = new EventEmitter();
 
-  constructor(private tastingService: TastingService) {
+  constructor(private router: Router, private tastingService: TastingService) {
   }
 
   ngOnInit(): void {
-
+    if (this.tastingService.selectedTasting == null) {
+      this.router.navigate(["/"]);
+    } else {
+      this.tasting = this.tastingService.selectedTasting;
+      this.tastingTime = new Date(this.tasting.time.year, this.tasting.time.month, this.tasting.time.day);
+      this.newBeer = this.tasting.beer;
+    }
   }
 
   beerSelected(beer: Beer) {
@@ -37,7 +44,9 @@ export class EditTastingComponent implements OnInit {
   userSelected(user: User) {
     this.tasting.giver = user;
   }
-
+  updateTasting() {
+    this.tastingService.updateTasting(this.tasting);
+  }
   editTasting() {
     // this.newTasting.time.day = this.tastingTime.getDate();
     // this.newTasting.time.month = this.tastingTime.getMonth() + 1;

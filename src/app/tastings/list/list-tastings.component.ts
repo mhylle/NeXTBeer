@@ -46,7 +46,8 @@ export class ListTastingComponent implements OnInit {
   }
 
   editTasting(tasting: Tasting) {
-    // this.router.navigate(['edit-tasting'], );
+    this.tastingService.selectedTasting = tasting;
+    this.router.navigate(['edit-tasting']);
   }
 
   deleteTasting(tasting: Tasting) {

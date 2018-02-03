@@ -3,7 +3,7 @@
   <div class="tastingBeer">
     <div class="tasting-beer">
       <mat-form-field>
-        <mat-select [(ngModel)]="selectedBeer" (selectionChange)="onSelectBeer()">
+        <mat-select [(ngModel)]="selectedBeer" (selectionChange)="onSelectBeer()" [compareWith]="inputBeer">
           <mat-option>None</mat-option>
           <mat-option *ngFor="let beer of beers | async" [value]="beer">{{beer.name}}</mat-option>
         </mat-select>
