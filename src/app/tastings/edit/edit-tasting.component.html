@@ -1,0 +1,55 @@
+<section>
+  <div class="panel">
+    <div class="header">Location and time</div>
+    <div class="tastingTime">
+      <div class="sub-header">When</div>
+      <div class="tasting-date">
+        <mat-input-container>
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="tastingTime" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-input-container>
+      </div>
+
+      <div class="tasting-hour">
+        <mat-form-field class="tasting-hour">
+          <input type="number" matInput placeholder="Hour" [(ngModel)]="newTasting.time.hour" min="0" max="23" size="4"
+                 required [formControl]="hourControl" name="tastingHour" class="tasting-hour">
+        </mat-form-field>
+      </div>
+      <div class="tasting-minute">
+        <mat-form-field class="tasting-minute">
+          <input type="number" class="smallInput" matInput placeholder="Minute" [(ngModel)]="newTasting.time.minute"
+                 min="0" max="59" size="4"
+                 required [formControl]="minuteControl" name="tastingMinute" class="tasting-minute">
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <div class="sub-header">Where</div>
+      <div class="tasting-location">
+        <mat-form-field>
+          <input type="text" matInput placeholder="The Office" [(ngModel)]="newTasting.location" required
+                 name="tastingLocation">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="panel">
+    <div class="header">Beer</div>
+    <select-beer (select)="beerSelected($event)"></select-beer>
+  </div>
+</section>
+<section>
+  <div class="panel">
+    <div class="header">Giver</div>
+    <select-user (userSelected)="userSelected($event)"></select-user>
+  </div>
+</section>
+
+<div class="panel">
+  <button mat-button (click)="createTasting()">Create</button>
+</div>
+

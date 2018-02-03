@@ -4,6 +4,7 @@ import {Tasting} from "../Tasting";
 import {UserService} from "../../users/services/user.service";
 import {User} from "../../users/User";
 import {Beer} from "../../beers/Beer";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'list-tastings',
@@ -15,7 +16,7 @@ export class ListTastingComponent implements OnInit {
   orderedTastings: Tasting[];
   users: User[];
 
-  constructor(private tastingService: TastingService, private userService: UserService) {
+  constructor(private router: Router, private tastingService: TastingService, private userService: UserService) {
   }
 
   ngOnInit() {
@@ -23,10 +24,12 @@ export class ListTastingComponent implements OnInit {
       this.tastings = response;
       this.sortTastings();
     });
+
     this.userService.getUsers().subscribe(users => {
       this.users = users;
     })
   }
+
 
   getBeerRatingByUser(user: User, beer: Beer) {
     return 1;
@@ -40,5 +43,13 @@ export class ListTastingComponent implements OnInit {
 
       return d2.valueOf() - d1.valueOf();
     })
+  }
+
+  editTasting(tasting: Tasting) {
+    // this.router.navigate(['edit-tasting'], );
+  }
+
+  deleteTasting(tasting: Tasting) {
+    this.tastingService.deleteTasting(tasting);
   }
 }

@@ -2,6 +2,7 @@ import {Beer} from "../beers/Beer";
 import {User} from "../users/User";
 
 export class Tasting {
+  key: string;
   id: string;
   name: string;
   beer: Beer;

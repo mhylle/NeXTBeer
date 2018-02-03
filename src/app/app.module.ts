@@ -38,6 +38,7 @@ import {PageNotFoundComponent} from "./errorhandling/page-not-found.component";
 import {SelectUserComponent} from "./users/select/select-user.component";
 import {ViewTastingComponent} from "./tastings/view/view-tasting.component";
 import {ListBeerImagesComponent} from "./beers/list/images/list-beer-images.component";
+import {EditTastingComponent} from "./tastings/edit/edit-tasting.component";
 
 
 const appRoutes: Routes = [
@@ -57,6 +58,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CreateTastingComponent,
+    EditTastingComponent,
     ViewTastingComponent,
     CreateBeerComponent,
     ListTastingComponent,

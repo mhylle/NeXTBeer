@@ -22,7 +22,13 @@ export class CreateTastingComponent implements OnInit {
   add: EventEmitter<Tasting> = new EventEmitter();
 
   constructor(private tastingService: TastingService) {
+    this.resetNewTasting()
+  }
 
+  ngOnInit(): void {
+  }
+
+  private resetNewTasting() {
     this.newTasting.time = {
       day: 0,
       month: 0,
@@ -31,11 +37,6 @@ export class CreateTastingComponent implements OnInit {
       minute: 30
     };
     this.newTasting.location = "På Kontoret";
-
-  }
-
-  ngOnInit(): void {
-
   }
 
   beerSelected(beer: Beer) {
@@ -47,7 +48,6 @@ export class CreateTastingComponent implements OnInit {
   }
 
   createTasting() {
-
     this.newTasting.time.day = this.tastingTime.getDate();
     this.newTasting.time.month = this.tastingTime.getMonth() + 1;
     this.newTasting.time.year = this.tastingTime.getFullYear();
@@ -61,13 +61,6 @@ export class CreateTastingComponent implements OnInit {
       year: now.getFullYear()
     };
     this.tastingService.addTasting(this.newTasting);
-    this.newTasting = new Tasting();
-    this.newTasting.time = {
-      day: 0,
-      month: 0,
-      year: 0,
-      hour: 14,
-      minute: 30
-    };
+    this.resetNewTasting();
   }
 }
