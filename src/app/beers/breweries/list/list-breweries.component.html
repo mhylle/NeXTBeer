@@ -1,15 +1,20 @@
-<div *ngFor="let brewery of breweries" class="hicard">
-  <div class="hicard-header">
-    <div class="hicard-title">{{brewery.name}}</div>
-  </div>
-  <div class="hicard-content">
-    <div class="beer-type-container">
-      <div class="beer-type-label">Type</div>
-      <div class="beer-description">{{brewery.type}}</div>
-      <div class="beer-type-label">Location</div>
-      <div class="beer-description">{{brewery.location}}</div>
-    </div>
-    <div class="beer-description">{{brewery.description}}</div>
-  </div>
+<div class="container">
+  <mat-card *ngFor="let brewery of breweries" class="hicard">
+    <mat-card-header>
+      <div class="label">{{brewery.name}}</div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="label">Type</div>
+      <div>{{brewery.type}}</div>
+      <div class="label">Location</div>
+      <div>{{brewery.location}}</div>
+      <div class="container">
+        <div class="beer-description">{{brewery.description}}</div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="editTasting(tasting)">Edit</button>
+      <button mat-button (click)="deleteTasting(tasting)">Delete</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
-
