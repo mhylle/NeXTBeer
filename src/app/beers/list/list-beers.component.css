@@ -40,6 +40,11 @@
   margin-right: 8px;
 }
 
+.beer-brewery {
+  float: left;
+  margin-right: 8px;
+}
+
 .beer-description {
   /*float: left;*/
   /*display: block;*/

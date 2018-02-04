@@ -14,6 +14,12 @@
                  required name="tastingBeerType" class="tasting-beer-type">
         </mat-form-field>
       </div>
+      <div class="tasting-beer-brewery">
+        <mat-form-field class="tasting-beer-brewery">
+          <input type="text" matInput placeholder="Brewery" [(ngModel)]="newBeer.brewery"
+                 required name="tastingBeerBrewery" class="tasting-beer-brewery">
+        </mat-form-field>
+      </div>
       <div class="tasting-beer-description">
         <mat-form-field class="tasting-beer-description">
           <input type="text" matInput placeholder="Description" [(ngModel)]="newBeer.description"
