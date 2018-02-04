@@ -1,0 +1,32 @@
+<div class="panel">
+  <div class="lefty brewerycreation">
+    <div class="sub-header">Create a new brewery</div>
+    <div>
+      <div class="tasting-brewery-name">
+        <mat-form-field class="tasting-brewery-name">
+          <input type="text" matInput placeholder="Name" [(ngModel)]="newBrewery.name"
+                 required name="tastingBeerName" class="tasting-brewery-name">
+        </mat-form-field>
+      </div>
+      <div class="tasting-brewery-type">
+        <mat-form-field class="tasting-brewery-type">
+          <input type="text" matInput placeholder="Type" [(ngModel)]="newBrewery.type"
+                 required name="breweryType" class="tasting-brewery-type">
+        </mat-form-field>
+      </div>
+      <div class="tasting-brewery-location">
+        <mat-form-field class="tasting-brewery-type">
+          <input type="text" matInput placeholder="Location" [(ngModel)]="newBrewery.location"
+                 required name="breweryType" class="tasting-brewery-type">
+        </mat-form-field>
+      </div>
+      <div class="tasting-brewery-description">
+        <mat-form-field class="tasting-brewery-description">
+          <input type="text" matInput placeholder="Description" [(ngModel)]="newBrewery.description"
+                 required name="breweryDescription" class="tasting-brewery-description">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <button mat-button (click)="createBrewery()">Create brewery</button>
+</div>

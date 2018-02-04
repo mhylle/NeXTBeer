@@ -1,3 +1,4 @@
+///<reference path="beers/list/list-beers.component.ts"/>
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
@@ -39,6 +40,9 @@ import {SelectUserComponent} from "./users/select/select-user.component";
 import {ViewTastingComponent} from "./tastings/view/view-tasting.component";
 import {ListBeerImagesComponent} from "./beers/list/images/list-beer-images.component";
 import {EditTastingComponent} from "./tastings/edit/edit-tasting.component";
+import {CreateBreweryComponent} from "./beers/breweries/create/create-brewery.component";
+import {ListBreweriesComponent} from "./beers/breweries/list/list-breweries.component";
+import {BreweryService} from "./beers/services/brewery.service";
 
 
 const appRoutes: Routes = [
@@ -46,6 +50,8 @@ const appRoutes: Routes = [
   {path: 'list-users', component: ListUsersComponent},
   {path: 'create-beer', component: CreateBeerComponent},
   {path: 'list-beers', component: ListBeersComponent},
+  {path: 'create-brewery', component: CreateBreweryComponent},
+  {path: 'list-breweries', component: ListBreweriesComponent},
   {path: 'list-beer-images', component: ListBeerImagesComponent},
   {path: 'create-tasting', component: CreateTastingComponent},
   {path: 'list-tastings', component: ListTastingComponent},
@@ -70,6 +76,8 @@ const appRoutes: Routes = [
     ListUsersComponent,
     ListBeersComponent,
     ListBeerImagesComponent,
+    CreateBreweryComponent,
+    ListBreweriesComponent,
     PageNotFoundComponent
   ],
   imports: [
@@ -97,7 +105,7 @@ const appRoutes: Routes = [
       {enableTracing: false} // <-- debugging purposes only
     )
   ],
-  providers: [BeerService, TastingService, UserService],
+  providers: [BeerService, TastingService, UserService, BreweryService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

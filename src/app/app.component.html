@@ -9,10 +9,16 @@
 </mat-menu>
 
 <mat-menu #beerMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="breweryMenu">Breweries</button>
   <button mat-menu-item routerLink="create-beer">Create</button>
   <button mat-menu-item routerLink="list-beers">List</button>
   <button mat-menu-item routerLink="list-beer-images">List Beer images</button>
 </mat-menu>
+<mat-menu #breweryMenu="matMenu">
+  <button mat-menu-item routerLink="create-brewery">Create</button>
+  <button mat-menu-item routerLink="list-breweries">List</button>
+</mat-menu>
+
 <mat-menu #tastingMenu="matMenu">
   <button mat-menu-item routerLink="create-tasting">Create</button>
   <button mat-menu-item routerLink="list-tastings">List</button>

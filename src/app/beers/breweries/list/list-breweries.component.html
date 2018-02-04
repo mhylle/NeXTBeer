@@ -1,0 +1,15 @@
+<div *ngFor="let brewery of breweries" class="hicard">
+  <div class="hicard-header">
+    <div class="hicard-title">{{brewery.name}}</div>
+  </div>
+  <div class="hicard-content">
+    <div class="beer-type-container">
+      <div class="beer-type-label">Type</div>
+      <div class="beer-description">{{brewery.type}}</div>
+      <div class="beer-type-label">Location</div>
+      <div class="beer-description">{{brewery.location}}</div>
+    </div>
+    <div class="beer-description">{{brewery.description}}</div>
+  </div>
+</div>
+
