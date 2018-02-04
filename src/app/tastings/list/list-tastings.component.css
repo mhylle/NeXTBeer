@@ -1,11 +1,20 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(298px, 1fr));
+  grid-gap: 8px;
+  grid-auto-rows: minmax(8px, auto);
+  grid-template-rows: auto 1fr auto;
+}
+
 .tasting {
   width: 250px;
-  margin-bottom: 8px;
 }
+
 .example-header-image {
   background-image: url('https://www.richmonds.it/catalogo/prodotti/big_fullers-london-pride-birra-500-ml.jpg');
   background-size: cover;
 }
+
 .panel {
   border: 1px solid black;
   border-radius: 5px;
