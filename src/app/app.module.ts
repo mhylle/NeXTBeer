@@ -44,6 +44,7 @@ import {CreateBreweryComponent} from "./beers/breweries/create/create-brewery.co
 import {ListBreweriesComponent} from "./beers/breweries/list/list-breweries.component";
 import {BreweryService} from "./beers/services/brewery.service";
 import {SelectBreweryComponent} from "./beers/breweries/select-brewery/select-brewery.component";
+import {EditBeerComponent} from "./beers/edit-beer/edit-beer.component";
 
 
 const appRoutes: Routes = [
@@ -51,6 +52,7 @@ const appRoutes: Routes = [
   {path: 'list-users', component: ListUsersComponent},
   {path: 'create-beer', component: CreateBeerComponent},
   {path: 'list-beers', component: ListBeersComponent},
+  {path: 'edit-beer', component: EditBeerComponent},
   {path: 'create-brewery', component: CreateBreweryComponent},
   {path: 'list-breweries', component: ListBreweriesComponent},
   {path: 'list-beer-images', component: ListBeerImagesComponent},
@@ -69,14 +71,15 @@ const appRoutes: Routes = [
     EditTastingComponent,
     ViewTastingComponent,
     CreateBeerComponent,
-    ListTastingComponent,
     SelectBeerComponent,
+    ListBeersComponent,
+    ListBeerImagesComponent,
+    EditBeerComponent,
+    ListTastingComponent,
     CreateUserComponent,
     SelectUserComponent,
     ViewUserComponent,
     ListUsersComponent,
-    ListBeersComponent,
-    ListBeerImagesComponent,
     CreateBreweryComponent,
     ListBreweriesComponent,
     SelectBreweryComponent,

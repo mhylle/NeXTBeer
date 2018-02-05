@@ -1,0 +1,29 @@
+<div class="panel">
+  <div class="lefty beercreation">
+    <div class="sub-header">Modify beer</div>
+    <div>
+      <div class="tasting-beer-name">
+        <mat-form-field class="tasting-beer-name">
+          <input type="text" matInput placeholder="Name" [(ngModel)]="beer.name"
+                 required name="tastingBeerName" class="tasting-beer-name">
+        </mat-form-field>
+      </div>
+      <div class="tasting-beer-type">
+        <mat-form-field class="tasting-beer-type">
+          <input type="text" matInput placeholder="Type" [(ngModel)]="beer.type"
+                 required name="tastingBeerType" class="tasting-beer-type">
+        </mat-form-field>
+      </div>
+      <div class="tasting-beer-brewery">
+          <select-brewery (select)="brewerySelected($event)" [brewery]="beer.brewery"></select-brewery>
+      </div>
+      <div class="tasting-beer-description">
+        <mat-form-field class="tasting-beer-description">
+          <input type="text" matInput placeholder="Description" [(ngModel)]="beer.description"
+                 required name="tastingBeerDescription" class="tasting-beer-description">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <button mat-button (click)="updateBeer()">Update</button>
+</div>

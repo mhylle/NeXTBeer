@@ -12,8 +12,6 @@ import {Router} from "@angular/router";
   styleUrls: ['./edit-tasting.component.css']
 })
 export class EditTastingComponent implements OnInit {
-
-  @Input()
   tasting: Tasting;
   newBeer: Beer = new Beer();
   hourControl = new FormControl("", [Validators.min(0), Validators.max(23)]);
