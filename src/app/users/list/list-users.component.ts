@@ -28,8 +28,8 @@ export class ListUsersComponent implements OnInit {
     });
   }
 
-  getUntappdBadges(user: User) {
-    return this.userService.getUntappdInfo(user);
-  }
+//  getUntappdBadges(user: User) {
+//    return this.userService.getUntappdInfo(user);
+//  }
 
 }
