@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Beer} from "../Beer";
 import {BeerService} from "../services/beer.service";
+import {Brewery} from "../breweries/Brewery";
 
 @Component({
   selector: 'create-beer',
@@ -21,5 +22,9 @@ export class CreateBeerComponent implements OnInit {
 
   createBeer() {
     this.beerService.addBeer(this.newBeer);
+  }
+
+  brewerySelected(brewery: Brewery) {
+    this.newBeer.brewery = brewery;
   }
 }

@@ -15,10 +15,7 @@
         </mat-form-field>
       </div>
       <div class="tasting-beer-brewery">
-        <mat-form-field class="tasting-beer-brewery">
-          <input type="text" matInput placeholder="Brewery" [(ngModel)]="newBeer.brewery"
-                 required name="tastingBeerBrewery" class="tasting-beer-brewery">
-        </mat-form-field>
+          <select-brewery (select)="brewerySelected($event)"></select-brewery>
       </div>
       <div class="tasting-beer-description">
         <mat-form-field class="tasting-beer-description">

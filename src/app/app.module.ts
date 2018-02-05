@@ -43,6 +43,7 @@ import {EditTastingComponent} from "./tastings/edit/edit-tasting.component";
 import {CreateBreweryComponent} from "./beers/breweries/create/create-brewery.component";
 import {ListBreweriesComponent} from "./beers/breweries/list/list-breweries.component";
 import {BreweryService} from "./beers/services/brewery.service";
+import {SelectBreweryComponent} from "./beers/breweries/select-brewery/select-brewery.component";
 
 
 const appRoutes: Routes = [
@@ -78,6 +79,7 @@ const appRoutes: Routes = [
     ListBeerImagesComponent,
     CreateBreweryComponent,
     ListBreweriesComponent,
+    SelectBreweryComponent,
     PageNotFoundComponent
   ],
   imports: [
