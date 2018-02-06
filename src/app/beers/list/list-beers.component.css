@@ -20,6 +20,14 @@
   background-color: #e3d695;
 }
 
+.label {
+  display: inline-block;
+  float: left;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+
 .hicard-title {
 
 }
