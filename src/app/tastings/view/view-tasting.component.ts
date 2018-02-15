@@ -84,7 +84,7 @@ export class ViewTastingComponent implements OnInit, OnDestroy {
       if (timeDifference < 0) {
         let minutes = Math.floor((Math.abs(timeDifference) / (1000 * 60)) % 60);
         let hours = Math.floor(Math.abs(timeDifference) / (1000 * 60 * 60));
-        if (minutes <= 1 && hours == 0) {
+        if (minutes <= 30 && hours == 0) {
           this.tastingOnGoing = true;
         } else {
           this.tastingOnGoing = false;

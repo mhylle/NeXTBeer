@@ -10,7 +10,15 @@
   width: 400px;
   /*display: block;*/
 }
-
+.celebration {
+  width: 100%;
+  text-align: center;
+}
+.celebrationHeader {
+  text-align: center;
+  width: 20%;
+  height: 50px;
+}
 .center {
   text-align: center;
 }

@@ -1,6 +1,20 @@
 <div *ngIf="tasting == null" class="notasting">There must be some kind of mistake. Are we not getting any beer?</div>
 
-<div *ngIf="tastingOnGoing">We are currently drinking a beer</div>
+<div *ngIf="tastingOnGoing" class="celebration">
+  <div>
+    <div *ngIf="tasting == null">We are currently drinking a beer</div>
+    <div *ngIf="tasting != null">
+      <div class="hit-the-floor">We are currently drinking a {{tasting.beer?.name}}</div>
+      <div *ngIf="tasting?.beer?.imageUrl"><img src="{{tasting?.beer?.imageUrl}}" height="600px"></div>
+      <div class="hit-the-floor">Thank you {{tasting.giver?.firstname}} {{tasting.giver?.familyname}}</div>
+    </div>
+  </div>
+  <div>
+    Next time you will be drinking a beer will be on !Date! where !Person! will be serving a !Beer!
+  </div>
+
+</div>
+
 
 <div *ngIf="!tastingOnGoing && tasting != null">
   <div style="text-align: center">
