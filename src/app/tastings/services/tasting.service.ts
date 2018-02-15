@@ -65,7 +65,7 @@ export class TastingService {
       } else {
         let minutes = Math.abs(Math.floor((timeDifference / (1000 * 60)) % 60));
         let hours = Math.abs(Math.floor(timeDifference / (1000 * 60 * 60)));
-        if (minutes <= 1 && hours == 0) {
+        if (minutes <= 30 && hours == 0) {
           return tastings[i];
         }
       }
