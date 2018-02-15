@@ -1,16 +1,31 @@
 <div class="container">
   <mat-card *ngFor="let beer of beers" class="hicard">
     <mat-card-header>
+
       <div class="label">{{beer.name}}</div>
     </mat-card-header>
     <mat-card-content>
-      <div class="label">Type</div>
-      <div>{{beer.type}}</div>
-      <div class="label">Brewery</div>
-      <div>{{beer.brewery?.name}}</div>
-      <div class="container">
-        <div class="beer-description">{{beer.description}}</div>
+      <div class="card-container">
+        <div><img src="{{beer.imageUrl}}" class="avatar"/></div>
+        <!--<div>-->
+        <div>
+          <div class="outer">
+            <div class="label">Type</div>
+            <div>{{beer.type}}</div>
+          </div>
+          <div class="outer">
+            <div class="label">Brewery</div>
+            <div>{{beer.brewery?.name}}</div>
+          </div>
+          <div>
+            <div class="beer-description">{{beer.description}}</div>
+          </div>
+        </div>
       </div>
+
+
+
+      <!--</div>-->
     </mat-card-content>
     <mat-card-actions>
       <button mat-button (click)="editBeer(beer)">Edit</button>

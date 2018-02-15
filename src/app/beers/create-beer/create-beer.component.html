@@ -14,6 +14,18 @@
                  required name="tastingBeerType" class="tasting-beer-type">
         </mat-form-field>
       </div>
+      <div class="tasting-beer-type">
+        <mat-form-field class="tasting-beer-type">
+          <input type="text" matInput placeholder="link" [(ngModel)]="newBeer.link"
+                 required name="tastingBeerType" class="tasting-beer-type">
+        </mat-form-field>
+      </div>
+      <div class="tasting-beer-type">
+        <mat-form-field class="tasting-beer-type">
+          <input type="text" matInput placeholder="Image link" [(ngModel)]="newBeer.imageUrl"
+                 required name="tastingBeerType" class="tasting-beer-type">
+        </mat-form-field>
+      </div>
       <div class="tasting-beer-brewery">
           <select-brewery (select)="brewerySelected($event)"></select-brewery>
       </div>

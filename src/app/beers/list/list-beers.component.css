@@ -6,6 +6,11 @@
   grid-template-rows: auto 1fr auto;
 }
 
+.card-container {
+  display: grid;
+  grid-template-columns: 60px 100%;
+}
+
 .hicard {
   -webkit-box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 2px 2px 3px 1px rgba(0, 0, 0, 0.75);
@@ -20,6 +25,10 @@
   background-color: #e3d695;
 }
 
+.avatar {
+  /*width: 50px;*/
+  height: 150px;
+}
 .label {
   display: inline-block;
   float: left;
@@ -37,8 +46,10 @@
 }
 
 .beer {
-  /*display: inline-block;*/
 
+}
+
+.outer {
 }
 
 .beer-name {
@@ -62,6 +73,8 @@
 }
 
 .beer-description {
+  margin-top: 8px;
+  width: 90%;
   /*float: left;*/
   /*display: block;*/
 }
