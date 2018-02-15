@@ -10,15 +10,60 @@
   width: 400px;
   /*display: block;*/
 }
+
 .celebration {
   width: 100%;
   text-align: center;
+  /*background-image: url('../../../assets/images/151101-laslo-beer-monopoly-tease_vvhdxp.jpg');*/
+
 }
 .celebrationHeader {
   text-align: center;
   width: 20%;
   height: 50px;
 }
+
+.svgClipped {
+  -webkit-clip-path: url(#svgPath);
+  clip-path: url(#svgPath);
+  margin:0 auto;
+}
+.text-wrap {
+
+  margin: 0;
+  position: relative;
+  width: 100%;
+}
+.text-wrap svg {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  font: bold 100px sans-serif;
+  text-transform: uppercase;
+}
+.text-wrap svg .img-layer {
+  fill: url(#p-img);
+}
+
+.gradient-layer {
+  fill: url(#gr-overlay);
+}
+h1 {
+
+}
+.beer-text {
+  margin-bottom: 8px;
+  margin-top: 8px;
+  font-size: 5em;
+  font-weight: bold;
+
+  /*background: -webkit-linear-gradient(#fff, #000);*/
+  /*-webkit-background-clip: text;*/
+  /*-webkit-text-fill-color: transparent;*/
+  color: #d67000;
+  text-shadow: 0 1px 0 #e3d695, 0 2px 0 #d67000, 0 3px 0 #7e3f00, 0 4px 0 #d66f00, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+}
+
 .center {
   text-align: center;
 }

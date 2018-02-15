@@ -4,7 +4,8 @@
   <div>
     <div *ngIf="tasting == null">We are currently drinking a beer</div>
     <div *ngIf="tasting != null">
-      <div class="hit-the-floor">We are currently drinking a {{tasting.beer?.name}}</div>
+      <div class="hit-the-floor">We are currently drinking a</div>
+      <div class="beer-text">{{tasting.beer?.name}}</div>
       <div *ngIf="tasting?.beer?.imageUrl"><img src="{{tasting?.beer?.imageUrl}}" height="600px"></div>
       <div class="hit-the-floor">Thank you {{tasting.giver?.firstname}} {{tasting.giver?.familyname}}</div>
     </div>
