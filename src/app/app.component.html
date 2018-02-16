@@ -1,7 +1,3 @@
-<!--<mat-menu #rootMenu="matMenu">-->
-<!--<button mat-menu-item [matMenuTriggerFor]="userMenu">Users</button>-->
-<!--<button mat-menu-item [matMenuTriggerFor]="beerMenu">Beers</button>-->
-<!--</mat-menu>-->
 
 <mat-menu #userMenu="matMenu">
   <button mat-menu-item routerLink="create-user" routerLinkActive="active">Create</button>
@@ -33,9 +29,12 @@
 
 
 <div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
+  <div>When is the </div>
+  <div><img src="assets/images/logo.png" width="600px"/></div>
+
+  <!--<h1>-->
+    <!--Welcome to {{title}}!-->
+  <!--</h1>-->
 </div>
 
   <router-outlet ></router-outlet>
