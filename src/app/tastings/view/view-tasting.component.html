@@ -6,24 +6,21 @@
     <div *ngIf="tasting != null">
       <div class="hit-the-floor">We are currently drinking a</div>
       <div class="beer-text">{{tasting.beer?.name}}</div>
-      <div *ngIf="tasting?.beer?.imageUrl"><img src="{{tasting?.beer?.imageUrl}}" height="600px"></div>
+      <div *ngIf="tasting?.beer?.imageUrl"><img src="assets/images/cheers.png" height="400px"></div>
       <div class="hit-the-floor">Thank you {{tasting.giver?.firstname}} {{tasting.giver?.familyname}}</div>
     </div>
   </div>
   <div>
     Next time you will be drinking a beer will be on !Date! where !Person! will be serving a !Beer!
   </div>
-
 </div>
-
-
 <div *ngIf="!tastingOnGoing && tasting != null">
   <div style="text-align: center">
     <div>{{tasting?.giver?.firstname}} {{tasting?.giver?.familyname}} is currently filling the mugs with
       {{tasting?.beer?.name}}
     </div>
 
-    <div *ngIf="tasting?.beer?.imageUrl"><img src="{{tasting?.beer?.imageUrl}}" height="600px"></div>
+    <div *ngIf="tasting?.beer?.imageUrl"><img src="{{tasting?.beer?.imageUrl}}" height="450px"></div>
     <div *ngIf="!tasting?.beer?.imageUrl"><img src="assets/images//hero01_12.png" width="400px"></div>
     <div>They should be full in</div>
     <div class="hit-the-floor">{{hoursRemaining}} hours
