@@ -1,5 +1,4 @@
 <div *ngIf="tasting == null" class="notasting">There must be some kind of mistake. Are we not getting any beer?</div>
-
 <div *ngIf="tastingOnGoing" class="celebration">
   <div>
     <div *ngIf="tasting == null">We are currently drinking a beer</div>
@@ -17,14 +16,13 @@
 
 <div *ngIf="!tastingOnGoing && tasting != null">
   <div style="text-align: center">
-    <div>{{tasting?.giver?.firstname}} {{tasting?.giver?.familyname}} is currently filling the mugs with
-      {{tasting?.beer?.name}}
-    </div>
+    <div>{{tasting?.giver?.firstname}} {{tasting?.giver?.familyname}} is currently filling the mugs with</div>
+    <div class="beer-text">{{tasting?.beer?.name}}</div>
 
     <div *ngIf="tasting?.beer?.imageUrl"><img src="{{tasting?.beer?.imageUrl}}" height="450px"></div>
     <div *ngIf="!tasting?.beer?.imageUrl"><img src="assets/images//hero01_12.png" width="400px"></div>
     <div>They should be full in</div>
-    <div class="hit-the-floor">{{hoursRemaining}} hours
+    <div class="beer-text">{{hoursRemaining}} hours
       <span *ngIf="minutesRemaining < 10">0</span>{{minutesRemaining}}
       <span *ngIf="minutesRemaining== 1">minute</span><span *ngIf="minutesRemaining != 1">minutes</span> and
       <span *ngIf="secondsRemaining < 10">0</span>{{secondsRemaining}}
@@ -32,7 +30,7 @@
       <span *ngIf="secondsRemaining != 1">seconds</span>
     </div>
     <div>
-      The beer will be served {{tasting?.location}}
+      The beer will be served <div class="beer-text">{{tasting?.location}}</div>
     </div>
   </div>
 </div>
