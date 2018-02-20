@@ -22,7 +22,8 @@
     <div *ngIf="tasting?.beer?.imageUrl"><img src="{{tasting?.beer?.imageUrl}}" height="450px"></div>
     <div *ngIf="!tasting?.beer?.imageUrl"><img src="assets/images//hero01_12.png" width="400px"></div>
     <div>They should be full in</div>
-    <div class="beer-text">{{hoursRemaining}} hours
+    <div *ngIf="daysRemaining >2" class="beer-text">{{daysRemaining}} days</div>
+    <div *ngIf="daysRemaining <=2" class="beer-text">{{hoursRemaining}} hours
       <span *ngIf="minutesRemaining < 10">0</span>{{minutesRemaining}}
       <span *ngIf="minutesRemaining== 1">minute</span><span *ngIf="minutesRemaining != 1">minutes</span> and
       <span *ngIf="secondsRemaining < 10">0</span>{{secondsRemaining}}

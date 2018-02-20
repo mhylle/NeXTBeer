@@ -15,6 +15,7 @@ import {Subscription} from "rxjs/Subscription";
 export class ViewTastingComponent implements OnInit, OnDestroy {
   tasting: Tasting;
   users: User[];
+  daysRemaining: number;
   hoursRemaining: number;
   minutesRemaining: number;
   secondsRemaining: number;
@@ -101,6 +102,8 @@ export class ViewTastingComponent implements OnInit, OnDestroy {
         this.minutesRemaining = minutes;
         this.hoursRemaining = hours;
       }
+
+      this.daysRemaining = Math.floor(this.hoursRemaining / 24);
     }
   }
 
