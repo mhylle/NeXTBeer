@@ -45,6 +45,7 @@ import {ListBreweriesComponent} from "./beers/breweries/list/list-breweries.comp
 import {BreweryService} from "./beers/services/brewery.service";
 import {SelectBreweryComponent} from "./beers/breweries/select-brewery/select-brewery.component";
 import {EditBeerComponent} from "./beers/edit-beer/edit-beer.component";
+import {CreateQuoteComponent} from "./quotes/create-quote/create-quote.component";
 
 
 const appRoutes: Routes = [
@@ -83,6 +84,7 @@ const appRoutes: Routes = [
     CreateBreweryComponent,
     ListBreweriesComponent,
     SelectBreweryComponent,
+    CreateQuoteComponent,
     PageNotFoundComponent
   ],
   imports: [
