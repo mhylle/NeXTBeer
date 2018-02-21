@@ -1,11 +1,13 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Quote} from "../Quote";
+import {QuoteService} from "../services/quote.service";
 
 
 @Component({
   selector: 'create-beer',
   templateUrl: './create-quote.component.html',
-  styleUrls: ['./create-quote.component.css']
+  styleUrls: ['./create-quote.component.css'],
+  providers: [QuoteService]
 })
 export class CreateQuoteComponent implements OnInit {
 
@@ -20,7 +22,7 @@ export class CreateQuoteComponent implements OnInit {
   }
 
   createQuote() {
-    this.quoteService.addBeer(this.newQuote);
+    this.quoteService.addQuote(this.newQuote);
   }
   
 }

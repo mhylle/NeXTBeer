@@ -30,13 +30,13 @@
 
 .tasting-date {
   float: left;
-  margin-right: 8px;
+  margin-right: var(--marg-right);
 }
 
 .tasting-hour {
   float: left;
   width: 75px;
-  margin-right: 8px;
+  margin-right: var(--marg-right);
 }
 
 .tasting-minute {

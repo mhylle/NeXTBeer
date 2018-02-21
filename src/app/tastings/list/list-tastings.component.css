@@ -30,6 +30,6 @@
 .label {
   display: inline-block;
   float: left;
-  margin-right: 8px;
+  margin-right: var(--marg-right);
   font-weight: bold;
 }
