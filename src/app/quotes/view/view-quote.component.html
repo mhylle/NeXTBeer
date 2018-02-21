@@ -1,0 +1,11 @@
+<div *ngIf="quote">
+  <mat-card class="quote">
+    <mat-card-content>
+      <div>{{quote.quote}}</div>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-card-subtitle>Author</mat-card-subtitle>
+      <mat-card-subtitle>{{quote.author}}</mat-card-subtitle>
+    </mat-card-footer>
+  </mat-card>
+</div>

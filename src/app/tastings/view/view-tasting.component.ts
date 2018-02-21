@@ -10,7 +10,7 @@ import {Subscription} from "rxjs/Subscription";
 @Component({
   selector: 'view-tasting',
   templateUrl: './view-tasting.component.html',
-  styleUrls: ['./view-tasting.component.css']
+  styleUrls: ['./view-tasting.component.css'],
 })
 export class ViewTastingComponent implements OnInit, OnDestroy {
   tasting: Tasting;

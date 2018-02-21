@@ -45,7 +45,9 @@ import {ListBreweriesComponent} from "./beers/breweries/list/list-breweries.comp
 import {BreweryService} from "./beers/services/brewery.service";
 import {SelectBreweryComponent} from "./beers/breweries/select-brewery/select-brewery.component";
 import {EditBeerComponent} from "./beers/edit-beer/edit-beer.component";
-import {CreateQuoteComponent} from "./quotes/create-quote/create-quote.component";
+import {ListQuotesComponent} from "./quotes/list/list-quotes.component";
+import {CreateQuoteComponent} from "./quotes/create/create-quote.component";
+import {ViewQuoteComponent} from "./quotes/view/view-quote.component";
 
 
 const appRoutes: Routes = [
@@ -61,6 +63,9 @@ const appRoutes: Routes = [
   {path: 'list-tastings', component: ListTastingComponent},
   {path: 'edit-tasting', component: EditTastingComponent},
   {path: 'next-tasting', component: ViewTastingComponent},
+  {path: 'create-quote', component: CreateQuoteComponent},
+  {path: 'list-quotes', component: ListQuotesComponent},
+  // {path: 'edit-quote', component: EditQuoteComponent},
   // {path: '', redirectTo: '/next-tasting', pathMatch: 'full'},
   {path: '**', component: ViewTastingComponent}
 ]
@@ -85,6 +90,8 @@ const appRoutes: Routes = [
     ListBreweriesComponent,
     SelectBreweryComponent,
     CreateQuoteComponent,
+    ListQuotesComponent,
+    ViewQuoteComponent,
     PageNotFoundComponent
   ],
   imports: [

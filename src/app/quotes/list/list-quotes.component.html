@@ -1,0 +1,17 @@
+<div>Quotes:</div>
+<div class="container">
+  <div *ngFor="let quote of quotes">
+    <mat-card class="tasting">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title class="label">{{quote.quote}}</mat-card-title>
+        <mat-card-subtitle>{{quote.author}}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-actions>
+        <button mat-button (click)="editTasting(tasting)">Edit</button>
+        <button mat-button (click)="deleteTasting(tasting)">Delete</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
