@@ -7,6 +7,7 @@ import {Observable} from "rxjs/Observable";
 export class TastingService {
 
   selectedTasting: Tasting;
+
   constructor(private db: AngularFireDatabase) {
   }
 
@@ -29,14 +30,15 @@ export class TastingService {
   }
 
   updateTasting(tasting: Tasting) {
-    if (tasting == null || tasting.key ==  null) {
+    if (tasting == null || tasting.key == null) {
       return;
     }
 
     this.db.object('/tastings/' + tasting.key).update(tasting);
   }
 
-  getNextTasting(tastings: Tasting[]): Tasting {
+
+  getNextTasting(tastings: Tasting[], currentTastingOk: boolean): Tasting {
     if (tastings.length == 0) {
       return null;
     }
@@ -60,14 +62,16 @@ export class TastingService {
     for (let i = 0; i < tastings.length; i++) {
       let timeOfTasting = this.calculateDate(tastings[i]);
       let timeDifference = timeOfTasting.valueOf() - now.valueOf();
-      if (timeDifference >= 0) {
+      let positiveTimeDiff = Math.abs(timeDifference);
+      let seconds = Math.floor(positiveTimeDiff / 1000);
+      let minutes = Math.floor(seconds / 60);
+      seconds = seconds % 60;
+      let hours = Math.floor(minutes / 60);
+      minutes = minutes % 60;
+      if (currentTastingOk && hours == 0 && Math.abs(minutes) <= 30) {
         return tastings[i];
-      } else {
-        let minutes = Math.abs(Math.floor((timeDifference / (1000 * 60)) % 60));
-        let hours = Math.abs(Math.floor(timeDifference / (1000 * 60 * 60)));
-        if (minutes <= 30 && hours == 0) {
-          return tastings[i];
-        }
+      } else if (timeDifference >= 0) {
+        return tastings[i];
       }
     }
     return null;

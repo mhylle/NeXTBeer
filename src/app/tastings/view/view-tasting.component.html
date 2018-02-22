@@ -6,11 +6,13 @@
       <div class="hit-the-floor">We are currently drinking a</div>
       <div class="beer-text">{{tasting.beer?.name}}</div>
       <div *ngIf="tasting?.beer?.imageUrl"><img src="assets/images/cheers.png" height="400px"></div>
-      <div class="hit-the-floor">Thank you {{tasting.giver?.firstname}} {{tasting.giver?.familyname}}</div>
+      <div class="beer-text">Thank you {{tasting.giver?.firstname}} {{tasting.giver?.familyname}}</div>
     </div>
   </div>
-  <div>
-    Next time you will be drinking a beer will be on !Date! where !Person! will be serving a !Beer!
+  <div *ngIf="nextTasting">
+    Next time you will be drinking a beer will be on
+    {{nextTasting.time.day}}/{{nextTasting.time.month}}-{{nextTasting.time.year}} where {{nextTasting.giver.firstname}}
+    {{nextTasting.giver.familyname}} will be serving a {{nextTasting.beer.name}}
   </div>
 </div>
 
@@ -31,7 +33,8 @@
       <span *ngIf="secondsRemaining != 1">seconds</span>
     </div>
     <div>
-      The beer will be served <div class="beer-text">{{tasting?.location}}</div>
+      The beer will be served
+      <div class="beer-text">{{tasting?.location}}</div>
     </div>
   </div>
 </div>

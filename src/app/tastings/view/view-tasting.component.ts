@@ -14,6 +14,7 @@ import {Subscription} from "rxjs/Subscription";
 })
 export class ViewTastingComponent implements OnInit, OnDestroy {
   tasting: Tasting;
+  nextTasting: Tasting;
   users: User[];
   daysRemaining: number;
   hoursRemaining: number;
@@ -29,7 +30,7 @@ export class ViewTastingComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.tastingService.getTastings().subscribe(response => {
-      this.tasting = this.tastingService.getNextTasting(response);
+      this.tasting = this.tastingService.getNextTasting(response, true);
     });
 
     this.userService.getUsers().subscribe(users => {
@@ -87,10 +88,13 @@ export class ViewTastingComponent implements OnInit, OnDestroy {
         let hours = Math.floor(Math.abs(timeDifference) / (1000 * 60 * 60));
         if (minutes <= 30 && hours == 0) {
           this.tastingOnGoing = true;
+          this.tastingService.getTastings().subscribe(response => {
+            this.nextTasting = this.tastingService.getNextTasting(response, false);
+          })
         } else {
           this.tastingOnGoing = false;
           this.tastingService.getTastings().subscribe(response => {
-            this.tasting = this.tastingService.getNextTasting(response);
+            this.tasting = this.tastingService.getNextTasting(response, true);
           });
         }
       } else {
