@@ -1,4 +1,8 @@
 .quote {
+  /*position: relative;*/
+  /*margin-right: 250px;*/
   width: 250px;
   float: right;
+  transform: rotate(22deg);
+  font-size: 2em;
 }
