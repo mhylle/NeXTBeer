@@ -14,6 +14,9 @@
     {{nextTasting.time.day}}/{{nextTasting.time.month}}-{{nextTasting.time.year}} where {{nextTasting.giver.firstname}}
     {{nextTasting.giver.familyname}} will be serving a {{nextTasting.beer.name}}
   </div>
+  <div *ngIf="!nextTasting">
+    Unfortunately there are no volunteers to bring us a beer at a later time. Perhaps you should be the beer bringer?
+  </div>
 </div>
 
 <div *ngIf="!tastingOnGoing && tasting != null">
