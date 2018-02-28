@@ -22,6 +22,16 @@ export class CreateCheerComponent implements OnInit {
   }
 
   createCheer() {
+    let now = new Date();
+    this.newCheer.creationTime = {
+      day: now.getDate(),
+      month: now.getMonth() + 1,
+      year: now.getFullYear(),
+      hour: now.getHours(),
+      minute: now.getMinutes(),
+      second: now.getSeconds()
+
+    };
     this.cheerService.addCheer(this.newCheer);
   }
 

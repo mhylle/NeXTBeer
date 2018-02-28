@@ -2,12 +2,26 @@ import {Component, OnInit} from '@angular/core';
 
 import {CheerService} from "../services/cheer.service";
 import {Cheer} from "../Cheer";
+import {animate, keyframes, query, stagger, style, transition, trigger} from "@angular/animations";
 
 @Component({
   selector: 'view-cheer',
   templateUrl: './view-cheer.component.html',
   styleUrls: ['./view-cheer.component.css'],
-  providers: [CheerService]
+  providers: [CheerService],
+  animations: [
+    trigger('cheer', [
+      transition('* => *', [
+        query(':enter', style({opacity: 0}), {optional: true}),
+        query(':enter', stagger('300ms', [
+          animate('.6s ease-in', keyframes([
+            style({opacity: 0, transform: 'translateY(-75%)', offset: 0}),
+            style({opacity: 0.5, transform: 'translateY(-35px)', offset: 0.3}),
+            style({opacity: 0, transform: 'translateY(0)', offset: 1.0}),
+          ]))]), {optional: true})
+      ])
+    ])
+  ]
 })
 export class ViewCheerComponent implements OnInit {
   cheer: Cheer;
@@ -18,7 +32,27 @@ export class ViewCheerComponent implements OnInit {
   ngOnInit() {
     this.cheerService.getCheers().subscribe((response) => {
       if (response.length > 0) {
-        this.cheer = response[Math.floor(Math.random() * response.length)];
+        let cheers = response;
+        cheers.sort((a, b) => {
+          let d1 = new Date(a.creationTime.year, a.creationTime.month - 1, a.creationTime.day, a.creationTime.hour, a.creationTime.minute, a.creationTime.second);
+          let d2 = new Date(b.creationTime.year, b.creationTime.month - 1, b.creationTime.day, b.creationTime.hour, b.creationTime.minute, b.creationTime.second);
+          return d1.valueOf() - d2.valueOf();
+        });
+        let now = new Date();
+        for (let i = 0; i < cheers.length; i++) {
+          let cheer = cheers[i];
+          let d1 = new Date(cheer.creationTime.year, cheer.creationTime.month - 1, cheer.creationTime.day, cheer.creationTime.hour, cheer.creationTime.minute, cheer.creationTime.second);
+          let positiveTimeDiff = Math.abs(now.valueOf()-d1.valueOf());
+          let seconds = Math.floor(positiveTimeDiff / 1000);
+          let minutes = Math.floor(seconds / 60);
+          seconds = seconds % 60;
+          minutes = minutes % 60;
+          if (minutes < 10) {
+            this.cheer = cheer;
+          } else {
+            this.cheer = null;
+          }
+        }
       } else {
         this.cheer = null;
       }
