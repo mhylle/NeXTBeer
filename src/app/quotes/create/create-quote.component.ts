@@ -4,7 +4,7 @@ import {QuoteService} from "../services/quote.service";
 
 
 @Component({
-  selector: 'create-beer',
+  selector: 'create-quote',
   templateUrl: './create-quote.component.html',
   styleUrls: ['./create-quote.component.css'],
   providers: [QuoteService]
@@ -24,5 +24,5 @@ export class CreateQuoteComponent implements OnInit {
   createQuote() {
     this.quoteService.addQuote(this.newQuote);
   }
-  
+
 }

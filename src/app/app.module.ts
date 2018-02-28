@@ -48,6 +48,9 @@ import {EditBeerComponent} from "./beers/edit-beer/edit-beer.component";
 import {ListQuotesComponent} from "./quotes/list/list-quotes.component";
 import {CreateQuoteComponent} from "./quotes/create/create-quote.component";
 import {ViewQuoteComponent} from "./quotes/view/view-quote.component";
+import {ViewCheerComponent} from "./cheers/view/view-cheer.component";
+import {ListCheersComponent} from "./cheers/list/list-cheers.component";
+import {CreateCheerComponent} from "./cheers/create/create-cheer.component";
 
 
 const appRoutes: Routes = [
@@ -65,6 +68,7 @@ const appRoutes: Routes = [
   {path: 'next-tasting', component: ViewTastingComponent},
   {path: 'create-quote', component: CreateQuoteComponent},
   {path: 'list-quotes', component: ListQuotesComponent},
+  {path: 'send-cheer', component: CreateCheerComponent},
   // {path: 'edit-quote', component: EditQuoteComponent},
   // {path: '', redirectTo: '/next-tasting', pathMatch: 'full'},
   {path: '**', component: ViewTastingComponent}
@@ -92,6 +96,9 @@ const appRoutes: Routes = [
     CreateQuoteComponent,
     ListQuotesComponent,
     ViewQuoteComponent,
+    CreateCheerComponent,
+    ListCheersComponent,
+    ViewCheerComponent,
     PageNotFoundComponent
   ],
   imports: [

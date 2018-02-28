@@ -1,0 +1,17 @@
+<div>Cheers:</div>
+<div class="container">
+  <div *ngFor="let cheer of cheers">
+    <mat-card class="tasting">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title class="label">{{cheer.cheer}}</mat-card-title>
+        <mat-card-subtitle>{{cheer.author}}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-actions>
+        <button mat-button (click)="editCheer(cheer)">Edit</button>
+        <button mat-button (click)="deleteCheer(cheer)">Delete</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="panel">
+  <div class="lefty beercreation">
+    <div class="sub-header">Create a new quote</div>
+    <div>
+      <div class="quote-name">
+        <mat-form-field class="quote-name">
+          <input type="text" matInput placeholder="Cheer" [(ngModel)]="newCheer.cheer"
+                 required name="cheerName" class="cheer-name">
+        </mat-form-field>
+      </div>
+      <div class="cheer-name">
+        <mat-form-field class="cheer-author">
+          <input type="text" matInput placeholder="Sender" [(ngModel)]="newCheer.author"
+                 required name="cheerAuthor" class="cheer-author">
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+  <button mat-button (click)="createCheer()">Create cheer</button>
+</div>
