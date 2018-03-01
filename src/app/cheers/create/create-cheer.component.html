@@ -1,6 +1,6 @@
 <div class="panel">
   <div class="lefty beercreation">
-    <div class="sub-header">Create a new quote</div>
+    <div class="sub-header">Create a new cheer</div>
     <div>
       <div class="quote-name">
         <mat-form-field class="quote-name">
@@ -17,4 +17,9 @@
     </div>
   </div>
   <button mat-button (click)="createCheer()">Create cheer</button>
+</div>
+
+<div>Choose from a predefined cheer</div>
+<div *ngFor="let predefinedCheer of predefinedCheers">
+   {{predefinedCheer.author}} says {{predefinedCheer.cheer}} <button mat-button (click)="createCheer(predefinedCheer)">Create</button>
 </div>
