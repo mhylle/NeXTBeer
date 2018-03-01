@@ -3,6 +3,9 @@ import {Component, OnInit} from '@angular/core';
 import {CheerService} from "../services/cheer.service";
 import {Cheer} from "../Cheer";
 import {animate, keyframes, query, stagger, style, transition, trigger} from "@angular/animations";
+import {Subscription} from "rxjs/Subscription";
+import {TimerObservable} from "rxjs/observable/TimerObservable";
+
 
 @Component({
   selector: 'view-cheer',
@@ -25,6 +28,8 @@ import {animate, keyframes, query, stagger, style, transition, trigger} from "@a
 })
 export class ViewCheerComponent implements OnInit {
   cheer: Cheer;
+  cheers: Cheer[];
+  private timeSubscription: Subscription;
 
   constructor(private cheerService: CheerService) {
   }
@@ -38,26 +43,41 @@ export class ViewCheerComponent implements OnInit {
           let d2 = new Date(b.creationTime.year, b.creationTime.month - 1, b.creationTime.day, b.creationTime.hour, b.creationTime.minute, b.creationTime.second);
           return d1.valueOf() - d2.valueOf();
         });
-        let now = new Date();
-        for (let i = 0; i < cheers.length; i++) {
-          let cheer = cheers[i];
-          let d1 = new Date(cheer.creationTime.year, cheer.creationTime.month - 1, cheer.creationTime.day, cheer.creationTime.hour, cheer.creationTime.minute, cheer.creationTime.second);
-          let positiveTimeDiff = Math.abs(now.valueOf()-d1.valueOf());
-          let seconds = Math.floor(positiveTimeDiff / 1000);
-          let minutes = Math.floor(seconds / 60);
-          seconds = seconds % 60;
-          minutes = minutes % 60;
-          if (minutes < 10) {
-            this.cheer = cheer;
-          } else {
-            this.cheer = null;
-          }
-        }
+
+        this.cheers = cheers;
+        this.updateCheer()
       } else {
         this.cheer = null;
       }
     });
+    let timer = TimerObservable.create(0, 5000);
+    this.timeSubscription = timer.subscribe(t => {
+      this.updateCheer();
+    })
   }
+
+  updateCheer() {
+    let now = new Date();
+    if (this.cheers == null) {
+      this.cheer = null;
+      return;
+    }
+    for (let i = 0; i < this.cheers.length; i++) {
+      let cheer = this.cheers[i];
+      let d1 = new Date(cheer.creationTime.year, cheer.creationTime.month - 1, cheer.creationTime.day, cheer.creationTime.hour, cheer.creationTime.minute, cheer.creationTime.second);
+      let positiveTimeDiff = Math.abs(now.valueOf() - d1.valueOf());
+      let seconds = Math.floor(positiveTimeDiff / 1000);
+      let minutes = Math.floor(seconds / 60);
+      seconds = seconds % 60;
+      minutes = minutes % 60;
+      if (minutes < 1) {
+        this.cheer = cheer;
+        break;
+      } else {
+        this.cheer = null;
+      }
+    }
+  };
 
 
 }
