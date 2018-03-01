@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {CheerService} from "../services/cheer.service";
 import {Cheer} from "../Cheer";
-import {animate, keyframes, query, stagger, style, transition, trigger} from "@angular/animations";
+import {animate, style, transition, trigger} from "@angular/animations";
 import {Subscription} from "rxjs/Subscription";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
 
@@ -14,16 +14,34 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
   providers: [CheerService],
   animations: [
     trigger('cheer', [
-      transition('* => *', [
-        query(':enter', style({opacity: 0}), {optional: true}),
-        query(':enter', stagger('300ms', [
-          animate('.6s ease-in', keyframes([
-            style({opacity: 0, transform: 'translateY(-75%)', offset: 0}),
-            style({opacity: 0.5, transform: 'translateY(-35px)', offset: 0.3}),
-            style({opacity: 0, transform: 'translateY(0)', offset: 1.0}),
-          ]))]), {optional: true})
+      transition(":enter", [
+        style({opacity: 0}),
+        animate(500, style({opacity: 1}))
+      ]),
+      transition(":leave", [
+        animate(500, style({opacity: 0}))
       ])
     ])
+    // trigger('cheer', [
+    //   transition(":increment", group([
+    //     query(':enter', [
+    //       style({ opacity: 1 }),
+    //       animate(500, style({ opacity: 0 }))
+    //     ]),
+    //     query(':leave', [
+    //       animate(500, style({ opacity: 1 }))
+    //     ])
+    //   ])),
+    //   transition(":decrement", group([
+    //     query(':enter', [
+    //       style({ opacity: 1 }),
+    //       animate(500, style({ opacity: 0 }))
+    //     ]),
+    //     query(':leave', [
+    //       animate(500, style({ opacity: 1 }))
+    //     ])
+    //   ]))
+    // ])
   ]
 })
 export class ViewCheerComponent implements OnInit {

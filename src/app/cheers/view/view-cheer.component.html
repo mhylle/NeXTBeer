@@ -1,4 +1,4 @@
-<div *ngIf="cheer" class="quote" [@cheer]="cheer">
+<div *ngIf="cheer">
 
-<div>{{cheer.author}} says {{cheer.cheer}}</div>
+<div class="cheer" [@cheer]="counter">{{cheer.author}} says {{cheer.cheer}}</div>
 </div>
