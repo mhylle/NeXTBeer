@@ -29,6 +29,8 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
 export class ViewCheerComponent implements OnInit {
   cheer: Cheer;
   cheers: Cheer[];
+  shownCheers: Cheer[] = [];
+  counter: number = 0;
   private timeSubscription: Subscription;
 
   constructor(private cheerService: CheerService) {
@@ -62,6 +64,7 @@ export class ViewCheerComponent implements OnInit {
       this.cheer = null;
       return;
     }
+
     for (let i = 0; i < this.cheers.length; i++) {
       let cheer = this.cheers[i];
       let d1 = new Date(cheer.creationTime.year, cheer.creationTime.month - 1, cheer.creationTime.day, cheer.creationTime.hour, cheer.creationTime.minute, cheer.creationTime.second);
@@ -72,11 +75,18 @@ export class ViewCheerComponent implements OnInit {
       let hours = Math.floor(minutes / 60);
       minutes = minutes % 60;
       if (hours == 0 && minutes < 10) {
-        this.cheer = cheer;
-        break;
+        this.shownCheers.push(cheer);
       } else {
-        this.cheer = null;
+        this.shownCheers = this.shownCheers.filter(obj => obj !== cheer);
       }
+    }
+    if (this.shownCheers.length > 0) {
+      this.cheer = this.shownCheers[this.counter++];
+      if (this.counter >= this.shownCheers.length) {
+        this.counter = 0;
+      }
+    } else {
+      this.cheers = null;
     }
   };
 
