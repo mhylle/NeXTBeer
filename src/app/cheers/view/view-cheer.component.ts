@@ -70,7 +70,7 @@ export class ViewCheerComponent implements OnInit {
       let minutes = Math.floor(seconds / 60);
       seconds = seconds % 60;
       minutes = minutes % 60;
-      if (minutes < 1) {
+      if (minutes < 10) {
         this.cheer = cheer;
         break;
       } else {
